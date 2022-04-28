@@ -29,6 +29,10 @@ I recommend installing the Windows Terminal app as your terminal emulator. This 
 
 Open up Windows Terminal and click the dropdown menu in the tab bar, then click `Settings`. Set your default profile to `Ubuntu` so it will open the command prompt to your Ubuntu installation by default. Open a new tab and it should take you your Ubuntu installation.
 
+#### Installing a patched font
+
+For symbols to show up properly, we need to install a patched nerd-font. I personally use the Hack Nerd font. You can download it [here](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf). Install the font, go to `Settings` in Windows Terminal, then click the hamburger icon in the top lef. Click `Defaults` under the Profiles, go to `Appearance`, and select `Hack Nerd Font Mono` as your font face.
+
 ### Setting up Ubuntu
 
 If you want a one-touch install for a sensible setup, you can install my dotfiles from github. From your terminal, enter the command:
@@ -41,5 +45,5 @@ Enter `y` for `Install dependencies and tools? (y/n)`, `y` for `Are you on WSL a
 
 Note that this step may take a while depending on your internet connection.
 
-That's it! You should now have a decent developement environment. Continue with [Lesson 1: The Linux Command Line](../lessons/lesson_1.md) to learn more about how to navigate the command line.
+That's it! You should now have a decent developement environment. Continue with [Lesson 1.1: The Linux Command Line](../lessons/lesson_1_1.md) to learn more about how to navigate the command line.
 
