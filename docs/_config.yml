@@ -32,7 +32,7 @@ plugins:
   - jekyll-remote-theme
 
 # theme: just-the-docs/just-the-docs
-remote_theme: just-the-docs/just-the-docs
+remote_theme: zane-/just-the-docs
 
 # just-the-docs config
 color_scheme: dark
