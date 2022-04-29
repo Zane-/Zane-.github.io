@@ -37,7 +37,9 @@ For some symbols to show up properly, we need to install a patched nerd-font. I 
 
 Now that we've installed Ubuntu, if you open it in `Windows Terminal`, you should see something like this:  
 
-![](images/cmdprompt.png)  
+```sh
+zane@Zane-PC:~$ _
+```
 
 This is called the command prompt — used for entering commands to your Linux system. Let's start by installing some useful packages. Paste the following command into your terminal (you may need to use `Ctrl+Shift+V`) and press `Enter`:  
 
