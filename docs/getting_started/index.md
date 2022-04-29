@@ -5,8 +5,7 @@ nav_order: 1
 ---
 # Getting Started
 
-Before you start learning how to code, let's get a proper development environment going.
-
+Before you start learning how to code, let's set up our development environment.
 
 ## Windows
 
@@ -35,13 +34,13 @@ For some symbols to show up properly, we need to install a patched nerd-font. I 
 
 ### Installing Build Tools
 
-Now that we've installed Ubuntu, if you open it in `Windows Terminal`, you should see something like this:  
+Now that we've installed Ubuntu, if you open it in Windows Terminal, you should see something like this:  
 
 ```sh
 zane@Zane-PC:~$ _
 ```
 
-This is called the command prompt — used for entering commands to your Linux system. Let's start by installing some useful packages. Paste the following command into your terminal (you may need to use `Ctrl+Shift+V`) and press `Enter`:  
+This is called the _command prompt_ — used for entering commands to your Linux system. Let's start by installing some useful packages. Paste the following command into your terminal (you may need to use `Ctrl+Shift+V`) and press `Enter`:  
 
 ```sh
 sudo apt-get update && sudo apt-get install -y bat build-essential libssl-dev \
