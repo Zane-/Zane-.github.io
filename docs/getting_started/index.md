@@ -31,19 +31,28 @@ Open up Windows Terminal and click the dropdown menu in the tab bar, then click 
 
 #### Installing a patched font
 
-For symbols to show up properly, we need to install a patched nerd-font. I personally use the Hack Nerd font. You can download it [here](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf). Install the font, go to `Settings` in Windows Terminal, then click the hamburger icon in the top lef. Click `Defaults` under the Profiles, go to `Appearance`, and select `Hack Nerd Font Mono` as your font face.
+For some symbols to show up properly, we need to install a patched nerd-font. I personally use the Hack Nerd font. You can download it [here](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf). Install the font, go to `Settings` in Windows Terminal, then click the hamburger icon in the top left. Click `Defaults` under the Profiles, go to `Appearance`, and select `Hack Nerd Font Mono` as your font face.
 
-### Setting up Ubuntu
+### Installing Build Tools
 
-If you want a one-touch install for a sensible setup, you can install my dotfiles from github. From your terminal, enter the command:
+Now that we've installed Ubuntu, if you open it in `Windows Terminal`, you should see something like this:  
 
+![](images/cmdprompt.png)  
+
+This is called the command prompt — used for entering commands to your Linux system. Let's start by installing some useful packages. Paste the following command into your terminal (you may need to use `Ctrl+Shift+V`) and press `Enter`:  
+
+```sh
+sudo apt-get update && sudo apt-get install -y bat build-essential libssl-dev \
+libreadline-dev clang clang-format cmake python3-dev nodejs npm ruby ruby-dev
 ```
-git clone http://github.com/zane-/dotfiles && cd dotfiles && ./setup.sh
-```
 
-Enter `y` for `Install dependencies and tools? (y/n)`, `y` for `Are you on WSL and wanting to install Rust? (y/n)`, and `n` for `Install i3-gaps setup? (y/n)`
+Note that it will prompt you for the password you set when you first installed Ubuntu. You should see a lot of text flying by showing things being downloaded and installed.  
 
-Note that this step may take a while depending on your internet connection.
+Let's break down this command.  
+
+`sudo` is a keyword you put in front of other commmands to indicate you want to run that command as admin. It stands for 'superuser do'. We often need to put `sudo` in front of commands that will modify our system, such as installing packages or deleting important files.
+
+`apt-get` is the command for the Apt Package Manager, which facilities installing/updating/removing packages from repositories (repositories are just remote servers that hold files available for download). `update` tells  `apt-get` to refresh all repositories. The `&&` allows us run multiple commands with one input, so everything before  `&&` is one command, and everything after is a separate one. Here we use it for convenience, but entering both as separate commands would work too. `install` tells `apt-get` that we would like to install some packages, and the `-y` is a flag (flags modify the behavior of commands) that will skip any confirmation prompts. After the `-y` are all the packages we want to install, separated by spaces. All of these packages are available in the default repositories available to Ubuntu, so there should be no need to add any additional ones. The `\` after 'libssl-dev' allows us to split the command to a new line so we can easily read it all.
 
 That's it! You should now have a decent developement environment. Continue with [Lesson 1.1: The Linux Command Line](../lessons/lesson_1_1.md) to learn more about how to navigate the command line.
 
