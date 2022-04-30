@@ -45,6 +45,8 @@ Note that `-a` is a flag being passed to the `ls` command, it means 'all', and t
 .  ..  .bash_history  .bash_logout  .bashrc  .landscape  .motd_shown  .profile  .sudo_as_admin_successful
 ```
 
+You can also pass a directory to `ls` to list the files there instead of the current directory. Try `ls /` to list the contents of the root directory.
+
 The `ls` command has various flags that do different things. To view them all, you can use the `man` command, short for 'manual'. In general, you can enter `man` followed by any command and it will give you detailed instructions on how to use it. Try:
 
 ```sh
@@ -59,7 +61,7 @@ Now, let's print the contents of one of these files. The `cat` command is the si
 $ cat .bashrc
 ```
 
-The contents of `.bashrc` should not be displayed on your terminal, and you can scroll up to read all of it. To look at the contents of a file without flooding our terminal with a large file, we can use the command `less`:
+The contents of `.bashrc` should now be displayed on your terminal, and you can scroll up to read all of it. To look at the contents of a file without flooding our terminal with it, we can use the command `less`:
 
 ```sh
 $ less .bashrc
@@ -95,7 +97,7 @@ If you enter `ls` now, you should see your `files` directory in blue alongside t
 $ mv file.txt files
 ```
 
-The `mv` command first takes the file or directory you want to move, then the destination. This command is saying take `file.txt` and move it into files. Enter `ls` and you should only see `files` now.
+The `mv` command first takes the file or directory you want to move, then the destination. This command is saying take `file.txt` and move it into the files directory. Enter `ls` and you should only see `files` now.
 
 To change into a different directory, use the `cd` command, short for 'change directory':
 
@@ -181,6 +183,11 @@ In our previous example, we used the relative filepath `files/file.txt` to refer
 
 `$USER` is a special environment variable that holds whatever you set as your Linux username. There are many environment variables used across Linux, and all of them are referred to by using the ${NAME} syntax.
 
+A couple more things to note is that `..` refers to the directory one level above your current working directory, and `.` refers to the directory you are currently in. `.` is useful when you're copying something from an absolute filepath and want to drop it in your current directory, for example:
+
+```sh
+$ cp ~/some/remote/directory/file.txt .
+```
 
 ## Wildcards
 
@@ -199,6 +206,13 @@ One particularly dangerous way of using wildcards is deleting files with `rm`. I
 | `mkdir` | Creates a directory                                 | `mkdir files`                |
 | `cp`    | Copies an input file/directory to a destination     | `cp file.txt files_cp.txt`   |
 | `rm`    | Removes a file. Use `rm -r` to remove a directory   | `rm file.txt`, `rm -r files` |
+
+`~` means home directory, `.` means current directory, `..` means the directory one level above the current directory.
+
+Relative filepath: a filepath relative to where you currently are  
+Absolute filepath: a filepath relative to the root or home directory
+
+Use `man {command}` if you need help with a command.
 
 ## Conclusion
 
