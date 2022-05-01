@@ -4,6 +4,12 @@ title: "1.1 The Linux Command Line"
 parent: Lessons
 ---
 # Lesson 1.1: The Linux Comand Line
+{: .no_toc }
+
+## Table of contents
+{: .no_toc }
+- TOC
+{:toc}
 
 In this lesson we will explore the Linux Command Line and learn some basic commands to deal with creating and navigating files. Skip ahead to [tldr](#tldr) if you want a quick summary.
 
@@ -100,6 +106,14 @@ $ mv file.txt files
 ```
 
 The `mv` command first takes the file or directory you want to move, then the destination. This command is saying take `file.txt` and move it into the files directory. Enter `ls` and you should only see `files` now.
+
+You can also rename a file using the `mv` command:
+
+```sh
+$ mv file.txt file_new_name.txt
+```
+
+If the directory you are trying to move your file into doesn't exist, you will rename the file instead.
 
 To change into a different directory, use the `cd` command, short for 'change directory':
 
@@ -227,9 +241,10 @@ One particularly dangerous way of using wildcards is deleting files with `rm`. I
 |---------|-----------------------------------------------------|------------------------------|
 | `ls`    | List files. Use `ls -a` to list hidden files        | `ls ~`, `ls -a`              |
 | `cat`   | Display the contents of a file to your terminal     | `cat file.txt`               |
-| `less`  | Display the contents of a file in a separate window | `less file.txt`              |
+| `less`  | Display the contents of a file in a separate view   | `less file.txt`              |
 | `touch` | Creates a file if it does not exist                 | `touch file.txt`             |
 | `mkdir` | Creates a directory                                 | `mkdir files`                |
+| `mv`    | Moves a file                                        | `mv file.txt files`          |
 | `cp`    | Copies an input file/directory to a destination     | `cp file.txt files_cp.txt`   |
 | `rm`    | Removes a file. Use `rm -r` to remove a directory   | `rm file.txt`, `rm -r files` |
 | `find`  | Finds a file                                        | `find ~/.bash*`              |
