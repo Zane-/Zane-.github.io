@@ -27,7 +27,7 @@ $
 
 When you see `$`, that means anything you see after should be entered into your command prompt, not including `$`.
 
-One thing you should know that if any command seems to freeze, or you want to cancel it for any reason, use `Ctrl+C`.
+One thing you should know that if any command seems to freeze, or you want to cancel it for any reason, use `Ctrl+C`. If that doesn't work, try pressing `q`.
 
 ## File Commands
 
