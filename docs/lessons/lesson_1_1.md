@@ -3,7 +3,7 @@ layout: page
 title: "1.1 The Linux Command Line"
 parent: Lessons
 ---
-# Lesson 1.1: The Linux Comand Line
+# Lesson 1.1: The Linux Command Line
 {: .no_toc }
 
 #### Table of contents
