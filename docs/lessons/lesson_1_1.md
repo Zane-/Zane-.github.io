@@ -191,7 +191,7 @@ $ cp ~/some/remote/directory/file.txt .
 
 ## Wildcards
 
-The `*` symbol in commands is known as a wildcard. It basically means 'anything'. If we navigate to our root directory using `cd /` and then enter `ls *`, you'll note that it shows the directory contents of every directory within the root directory. We can also use the wildcard to set constrains on commands, the command `ls l*` means 'ls every directory starting with an l; anything can come after the l'.
+The `*` symbol in commands is known as a wildcard. It basically means 'anything'. If we navigate to our root directory using `cd /` and then enter `ls *`, you'll note that it shows the directory contents of every directory within the root directory. We can also use the wildcard to set constraints on commands, the command `ls l*` means 'ls every directory starting with an l; anything can come after the l'.
 
 One particularly dangerous way of using wildcards is deleting files with `rm`. If you enter the command `rm *`, it will attempt to delete everything (except for directories, unless you add the `-r` flag). Wildcards are a very powerful tool for working with multiple files, but use them with caution.
 
