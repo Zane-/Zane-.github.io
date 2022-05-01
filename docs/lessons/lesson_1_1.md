@@ -6,7 +6,7 @@ parent: Lessons
 # Lesson 1.1: The Linux Comand Line
 {: .no_toc }
 
-## Table of contents
+#### Table of contents
 {: .no_toc }
 - TOC
 {:toc}
@@ -250,14 +250,14 @@ One particularly dangerous way of using wildcards is deleting files with `rm`. I
 | `find`  | Finds a file                                        | `find ~/.bash*`              |
 | `grep`  | Search for a text pattern in files                  | `grep -r bash`               |
 
-`~` means home directory, `.` means current directory, `..` means the directory one level above the current directory.
+* `~` means home directory, `.` means current directory, `..` means the directory one level above the current directory.
 
-Relative filepath: a filepath relative to where you currently are  
-Absolute filepath: a filepath relative to the root or home directory
+* Relative filepath: a filepath relative to where you currently are.
+* Absolute filepath: a filepath relative to the root or home directory.
 
-Use `man {command}` if you need help with a command.
+* Use `man {command}` if you need help with a command.
 
-Use `Ctrl+C` to cancel a running command.
+* Use `Ctrl+C` to cancel a running command.
 
 ## Conclusion
 
