@@ -147,7 +147,7 @@ To go back a directory, enter:
 $ cd ..
 ```
 
-`..` in a command refers to the next directory in the path, in this case `~`. If you were in a directory `~/files/more_files`, `..` would then refer to `files`.
+`..` in a command refers to the directory one level above your current directory, in this case `~`. If you were in a directory `~/files/more_files`, `..` would then refer to `files`.
 
 Try deleting the `files` directory with `rm`. You should see this:
 
