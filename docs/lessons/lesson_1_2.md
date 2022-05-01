@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "1.2 Version Control with Git"
+title: "1.2 Remote Repositories with Git"
 parent: Lessons
 ---
-# Lesson 1.2: Version Control with Git
+# Lesson 1.2: Remote Repositories with Git
 
 

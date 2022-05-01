@@ -177,7 +177,7 @@ After installation, you should now have access to the `trash` command. Create a 
 $ touch file.txt && trash file.txt
 ```
 
-Using && allows us to enter multiple commands at once, so `touch` will be ran first, then `trash` will be ran after `touch` completes.
+Using `&&` allows us to enter multiple commands at once, so `touch` will run first, followed by `trash` after `touch` completes.
 
 Trashed files go to a certain directory in your home directory, you can display the contents of it with the `ls` command:
 
@@ -217,13 +217,13 @@ In general, there are two types of filepaths: _relative_ and _absolute_.
 
 Relative filepaths are given relative to wherever the filepath is being given. For example, if you are in your home directory (`~`), and there is a folder named `files` with a file `file.txt` inside it, you could refer to this file with the filepath `files/file.txt`. However, if you were inside the directory `~/files`, using `files/file.txt` would no longer work because relative to where we are now, the `files` directory doesn't exist. The correct way to refer to `file.txt` would now just simply be `file.txt`.
 
-Absolute filepaths work regardless of what directory you're in. They typically specify something relative to the root directory, `/` or your home directory, `~`. The root directory is the top-level directory of your Linux operating system, you can display the contents by entering `ls /`.
+Absolute filepaths work regardless of what directory you're in. They typically specify something relative to the root directory, `/`, or your home directory, `~`. The root directory is the top-level directory of your Linux operating system, you can display the contents by entering `ls /`.
 
-In our previous example, we used the relative filepath `files/file.txt` to refer to `file.txt` while we in our home directory. If we were somewhere else on our system but still wanted to access `file.txt`, we could use the absolute filepath `~/files/file.txt`. This means 'start at my home directory, then go into the files folder and give me file.txt'. We could also specify this absolute filepath relative to the root directory: `/home/$USER/files/file.txt`.
+In our previous example, we used the relative filepath `files/file.txt` to refer to `file.txt` while we were in our home directory. If we were somewhere else on our system but still wanted to access `file.txt`, we could use the absolute filepath `~/files/file.txt`. This means 'start at my home directory, then go into the files folder and give me file.txt'. We could also specify this absolute filepath relative to the root directory: `/home/$USER/files/file.txt`.
 
 `$USER` is a special environment variable that holds whatever you set as your Linux username. There are many environment variables used across Linux, and all of them are referred to by using the ${NAME} syntax.
 
-A couple more things to note is that `..` refers to the directory one level above your current working directory, and `.` refers to the directory you are currently in. `.` is useful when you're copying something from an absolute filepath and want to drop it in your current directory, for example:
+A couple more things to note is that `..` refers to the directory one level above your current working directory, and `.` refers to the directory you are currently in. `.` is useful when you're copying files from somewhere else to your current directory, for example:
 
 ```sh
 $ cp ~/some/remote/directory/file.txt .
@@ -231,7 +231,7 @@ $ cp ~/some/remote/directory/file.txt .
 
 ## Wildcards
 
-The `*` symbol in commands is known as a wildcard. It basically means 'anything'. If we navigate to our root directory using `cd /` and then enter `ls *`, you'll note that it shows the directory contents of every directory within the root directory. We can also use the wildcard to set constraints on commands, the command `ls l*` means 'ls every directory starting with an l; anything can come after the l'.
+The `*` symbol in commands is known as a wildcard. It basically means 'anything'. If we navigate to our root directory using `cd /` and then enter `ls *`, you'll note that it shows the directory contents of every directory within the root directory. We can also use the wildcard within text patterns; the command `ls l*` means 'ls every directory starting with an l; anything can come after the l'.
 
 One particularly dangerous way of using wildcards is deleting files with `rm`. If you enter the command `rm *`, it will attempt to delete everything (except for directories, unless you add the `-r` flag). Wildcards are a very powerful tool for working with multiple files, but use them with caution.
 
@@ -252,13 +252,13 @@ One particularly dangerous way of using wildcards is deleting files with `rm`. I
 
 * `~` means home directory, `.` means current directory, `..` means the directory one level above the current directory.
 
-* Relative filepath: a filepath relative to where you currently are.
+* Relative filepath: a filepath relative to your current working directory.
 * Absolute filepath: a filepath relative to the root or home directory.
 
 * Use `man {command}` if you need help with a command.
 
-* Use `Ctrl+C` to cancel a running command.
+* Use `Ctrl+C` or `q` to quit a command.
 
 ## Conclusion
 
-You should now have the basic tools needed to navigate and manage files. Continue to [Lesson 1.2: Version Control with Git](lesson_1_2.md) to learn how to create git repositories to manage files remotely and collaborate with others.
+You now have the basic tools needed to navigate and manage files. Continue to [Lesson 1.2: Remote Repositories with Git](lesson_1_2.md) to learn how to create git repositories to manage files remotely and collaborate with others.
