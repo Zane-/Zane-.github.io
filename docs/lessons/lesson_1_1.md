@@ -13,6 +13,8 @@ parent: Lessons
 
 In this lesson we will explore the Linux Command Line and learn some basic commands to deal with creating and navigating files. Skip ahead to [tldr](#tldr) if you want a quick summary.
 
+A program that processes commands is called a _shell_. There are many different shells out there, some popular ones being zsh and fish, but the shell that ships with most distributions of Linux is bash. It stands for <ins>B</ins>ourne <ins>a</ins>gain <ins>sh</ins>ell.
+
 Open up your terminal, and once again you should see something like:
 
 ```sh
@@ -28,8 +30,6 @@ $
 When you see `$`, that means anything you see after should be entered into your command prompt, not including `$`.
 
 One thing you should know that if any command seems to freeze, or you want to cancel it for any reason, use `Ctrl+C`. If that doesn't work, try pressing `q`.
-
-A program that processes commands is called a _shell_. There are many different shells out there, some popular ones being zsh and fish, but the shell that ships with most distributions of Linux is bash. It stands for <ins>B</ins>ourne <ins>a</ins>gain <ins>sh</ins>ell.
 
 ## File Commands
 
