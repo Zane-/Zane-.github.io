@@ -5,7 +5,7 @@ parent: Lessons
 ---
 # Lesson 1.1: The Linux Comand Line
 
-In this lesson we will explore the Linux Command Line and learn some basic commands to deal with creating and navigating files.
+In this lesson we will explore the Linux Command Line and learn some basic commands to deal with creating and navigating files. Skip ahead to [tldr](#tldr) if you want a quick summary.
 
 Open up your terminal, and once again you should see something like:
 
@@ -20,6 +20,8 @@ $
 ```
 
 When you see `$`, that means anything you see after should be entered into your command prompt, not including `$`.
+
+One thing you should know that if any command seems to freeze, or you want to cancel it for any reason, use `Ctrl+C`.
 
 ## File Commands
 
@@ -171,6 +173,30 @@ $ ls ~/.local/share/Trash/files
 
 The `trash` package also comes with several other useful commands to empty, view, or restore trashed files. To list trashed files, use `trash-list`. To restore trashed files, use `trash-restore`. And to empty the trash, use `trash-empty`.
 
+### Searching Files
+
+We can search for files using the `find` command:
+
+```sh
+$ find ~/.bash*
+```
+
+This means 'find all files in our home directory starting with '.bash' and ending with anything (`*` means match anything). It should return:
+
+```
+.bash_history
+.bash_logout
+.bashrc
+```
+
+To search text patterns in files, use the `grep` command. `grep` can do very complex things, so check out the manual page with `man grep` if you want to learn more. To search all the files in our home directory for the string 'bash', enter the command:
+
+```sh
+$ grep -r bash
+```
+
+The output should show you each line containing 'bash' in each file in your home directory. The `-r` flag we passed means 'recursive', so it searches each file in the directory. You can also specify the file you want to search — for example `grep bash .bashrc` to only search the file `.bashrc`.
+
 ## Filepaths
 
 In general, there are two types of filepaths: _relative_ and _absolute_.
@@ -201,11 +227,13 @@ One particularly dangerous way of using wildcards is deleting files with `rm`. I
 |---------|-----------------------------------------------------|------------------------------|
 | `ls`    | List files. Use `ls -a` to list hidden files        | `ls ~`, `ls -a`              |
 | `cat`   | Display the contents of a file to your terminal     | `cat file.txt`               |
-| `less`  | Display the contents of a file in a separate window |                              |
+| `less`  | Display the contents of a file in a separate window | `less file.txt`              |
 | `touch` | Creates a file if it does not exist                 | `touch file.txt`             |
 | `mkdir` | Creates a directory                                 | `mkdir files`                |
 | `cp`    | Copies an input file/directory to a destination     | `cp file.txt files_cp.txt`   |
 | `rm`    | Removes a file. Use `rm -r` to remove a directory   | `rm file.txt`, `rm -r files` |
+| `find`  | Finds a file                                        | `find ~/.bash*`              |
+| `grep`  | Search for a text pattern in files                  | `grep -r bash`               |
 
 `~` means home directory, `.` means current directory, `..` means the directory one level above the current directory.
 
@@ -213,6 +241,8 @@ Relative filepath: a filepath relative to where you currently are
 Absolute filepath: a filepath relative to the root or home directory
 
 Use `man {command}` if you need help with a command.
+
+Use `Ctrl+C` to cancel a running command.
 
 ## Conclusion
 
