@@ -246,16 +246,16 @@ One particularly dangerous way of using wildcards is deleting files with `rm`. I
 | `less`  | Display the contents of a file in a separate view   | `less file.txt`              |
 | `touch` | Creates a file if it does not exist                 | `touch file.txt`             |
 | `mkdir` | Creates a directory                                 | `mkdir files`                |
-| `mv`    | Moves a file                                        | `mv file.txt files`          |
+| `mv`    | Moves a file or directory                           | `mv file.txt files`          |
 | `cp`    | Copies an input file/directory to a destination     | `cp file.txt files_cp.txt`   |
 | `rm`    | Removes a file. Use `rm -r` to remove a directory   | `rm file.txt`, `rm -r files` |
-| `find`  | Finds a file                                        | `find ~/.bash*`              |
-| `grep`  | Search for a text pattern in files                  | `grep -r bash`               |
+| `find`  | Finds files matching a text pattern                 | `find ~/.bash*`              |
+| `grep`  | Search for a text pattern within files              | `grep -r bash`               |
 
 * `~` means home directory, `.` means current directory, `..` means the directory one level above the current directory.
 
-* Relative filepath: a filepath relative to your current working directory.
-* Absolute filepath: a filepath relative to the root or home directory.
+* Relative filepath: a filepath relative to your current working directory. For example: `.bashrc`.
+* Absolute filepath: a filepath starting from the root or home directory. For example: `~/.bashrc` or `/home/$USER/.bashrc`.
 
 * Use `man {command}` if you need help with a command.
 
