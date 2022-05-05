@@ -101,6 +101,20 @@ Let's move `file.txt` into its own directory (aka folder) now. The `mkdir` comma
 $ mkdir files
 ```
 
+One caveat with the `mkdir` command is if you're creating a nested directory, i.e. `files/more_files/even_more_files`, it will fail with the error:
+
+```
+mkdir: cannot create directory 'files/more_files/even_more_files': No such files or directory
+```
+
+It says this because the parent directory of `even_more_files`, `more_files`, does not exist yet. We can pass the `-p` flag to `mkdir` to create any parent directories needed:
+
+```sh
+mkdir -p files/more_files/even_more_files
+```
+
+The command should now succeed.
+
 If you enter `ls` now, you should see your `files` directory in blue alongside the `file.txt` file. To move `file.txt` into the `files` directory, use the `mv` command:
 
 ```sh
