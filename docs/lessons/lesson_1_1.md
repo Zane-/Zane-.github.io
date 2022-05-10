@@ -29,7 +29,7 @@ $
 
 When you see `$`, that means anything you see after should be entered into your command prompt, not including `$`.
 
-One thing you should know that if any command seems to freeze, or you want to cancel it for any reason, use `Ctrl+C`. If that doesn't work, try pressing `q`.
+One thing you should know that if any command seems to freeze, or you want to cancel it for any reason, use `Ctrl+c`. If that doesn't work, try pressing  `Ctrl+d` or `q`.
 
 ## File Commands
 
@@ -51,9 +51,12 @@ $ ls -a
 
 Note that `-a` is a flag being passed to the `ls` command, it means 'all', and tells `ls` to show all files, even hidden ones. You should see something similar to:
 
+
 ```
 .  ..  .bash_history  .bash_logout  .bashrc  .landscape  .motd_shown  .profile  .sudo_as_admin_successful
 ```
+
+Tip: You can use the up arrow key in your command line to cycle between your last-used commands.
 
 You can also pass a directory to `ls` to list the files there instead of the current directory. Try `ls /` to list the contents of the root directory.
 
@@ -273,7 +276,9 @@ One particularly dangerous way of using wildcards is deleting files with `rm`. I
 
 * Use `man {command}` if you need help with a command.
 
-* Use `Ctrl+C` or `q` to quit a command.
+* Use `Ctrl+c`, `Ctrl+d`, or `q` to quit a command.
+
+* Use the up/down arrow keys to navigate previously entered commands.
 
 ## Conclusion
 
