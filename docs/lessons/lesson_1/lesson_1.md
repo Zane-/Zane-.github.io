@@ -7,7 +7,7 @@ nav_order: 1
 ---
 # Lesson 1: The Tools of the Trade
 
-The focus of Lesson 1 will be on the common tools developers use to enable productivity, ease-of-use, and safety. We will not start covering how to code until Lesson 2 because I want you to have a solid foundation the tools you will often use when you start coding.
+The focus of Lesson 1 will be on the common tools developers use to enable productivity, ease-of-use, and safety. We will not start covering how to code until Lesson 2 because I want you to have a solid foundation on the tools you will often use when you start coding.
 
 I have included brief descriptions of the lessons here, with a link to their `tldr` sections for a slightly-more detailed summary.
 
