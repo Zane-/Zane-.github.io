@@ -1,7 +1,9 @@
 ---
 layout: page
 title: "1.1 The Linux Command Line"
-parent: Lessons
+parent: Lesson 1
+grand_parent: Lessons
+nav_order: 1
 ---
 # Lesson 1.1: The Linux Command Line
 {: .no_toc }
