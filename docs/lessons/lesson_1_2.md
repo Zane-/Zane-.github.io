@@ -161,7 +161,7 @@ After you create your commit with the `test.txt` file, we can push it to our rem
 $ git push origin main
 ```
 
-You should see output similar to
+You should see output similar to:
 
 ```
 Enumerating objects: 4, done
@@ -172,13 +172,13 @@ Writing objects: 100% (3/3), 275 bytes | 275.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 ```
 
-Refresh your repo on Github, and you should see your `test.txt` file there. Click on it to see that it contains the content we wrote to it. You can share your webpage URL with anyone in the world and they will be able to see your `test.txt` file.
+Refresh your repo on Github, and you should see your `test.txt` file there. Click on it to see that it contains the content we wrote to it. You can share your webpage url with anyone in the world, and they will be able to see the contents of your `test.txt` file.
 
-Now, let's delete the `test.txt` file so we can demonstrate refreshing the repo from our command line. Click on the `test.txt` file on Github and click the trash icon located on the right-hand side of the screen. Click the green `Commit changes` button to confirm.
+Now, let's delete the `test.txt` file so we can demonstrate refreshing the repo from our command line. Click the trash icon located on the right-hand side of the screen, then the green `Commit changes` button to confirm.
 
 #### Pulling Changes
 
-Since we pushed a commit from Github itself, our copy of it on our Ubuntu system is behind 1 commit. To catch up, we use the `git pull` command while inside of our repo directory:
+Since we pushed a commit from Github itself, our copy of the repo on our Ubuntu system is 1 commit behind `HEAD`. In version control systems, `HEAD` refers to the most recent version of the repo. To catch up to `HEAD`, we can use the `git pull` command while inside of our repo directory:
 
 ```
 $ git pull
@@ -194,9 +194,9 @@ Fast-forward
   delete mode 100644 test.txt
 ```
 
-If you run `ls` now, you should see that the `test.txt` file is gone.
+If you run `ls` now, you should see that the `test.txt` file is gone, and `git status` will tell you that your branch is up to date.
 
-When working with multiple people on the same repo, `git pull` is where you can run into a lot of issues, especially if you were working on the same files. I will not go over how to resolve those issues here, instead, google whatever issues you run into when you run into them.
+When working with multiple people on the same repo, `git pull` is where you can run into a lot of issues, especially if you were working on the same files. These are called merge conflicts, and you must resolve them by telling git what you want to keep from your local state of the repo as well as the state being pulled in. I will not go over how to resolve these issues here, so if you run into any, google whatever shows up on your screen.
 
 ### A note on Branches
 
@@ -215,16 +215,22 @@ Earlier, we noted that the default branch that Github creates when we made our r
 | `git pull`                 | Pulls any commits from the remote repo    | `git pull`                                       |
 | `git reset HEAD~`          | Resets any unpushed commits               | `git reset HEAD~`                                |
 
-* Git is a version control system, which manages making changes to a set of files.
+* Git is a version control system, which manages making changes to a set of files, also known as a repository or repo.
 
 * Github is a free hosting service for git repositories.
 
-* A commit in git is a snapshot of the repo in time.
+* A commit in git is a snapshot of the repo.
 
-* A branch in git is an isolated offshoot of the main repo.
+* Commits should be small and have descriptive messages so they are easy to track.
+
+* A branch in git is an isolated offshoot of the main branch, like a tree branch from the main trunk.
+
+* Features should be isolated into branches until they are ready to be merged back into the main branch.
+
+* `HEAD` means the most recent commit of a branch.
 
 ## Conclusion
 
 You should now be able to create and modify repos using Github and `git`. I left out a lot of details, so feel free to search for documentation online if you run into any problems or want to learn more.
 
-From now on, I encourage you store any files you work on throughout lessons in a repository on Github, as it will enable me to see them and help if needed.
+From now on, I encourage you to store any files you work on throughout lessons in a repository on Github, as it will enable me to see them and help if needed, and it is a great way to copy projects between computers.
