@@ -289,7 +289,7 @@ Note that more packages than you listed may be installed because packages can li
 
 #### Upgrading Packages
 
-Any installed packages can be upgraded if one is available by using the `upgrade` command:
+Any installed packages can be upgraded if available by using the `upgrade` command:
 
 ```sh
 $ sudo apt-get upgrade
@@ -313,7 +313,15 @@ $ sudo apt-get autoremove
 
 ### homebrew
 
-homebrew is a package manager for macOS, feel free to skip this section if you are not on macOS. The command for homebrew is `brew`.
+homebrew is a package manager for macOS, feel free to skip this section if you are not on macOS. The command for homebrew is `brew`. If you have not installed it yet, please do so from [brew.sh](https://brew.sh).
+
+#### Refreshing Sources
+
+homebrew can be refreshed via the `update` command:
+
+```sh
+$ brew update
+```
 
 #### Installing Packages
 
@@ -323,12 +331,12 @@ Installing packages is done with the `install` command. You can specify multiple
 $ brew install ripgrep fzf
 ```
 
-#### Upgrading and Refreshing Packages
+#### Upgrading Packages
 
-Any installed packages can be upgraded and repositories can be refreshed by using the `update` command:
+Any installed packages can be upgraded if available by using the `upgrade` command:
 
 ```sh
-$ brew update
+$ brew upgrade
 ```
 
 This will download the newer version of the package and overwrite the old one.
