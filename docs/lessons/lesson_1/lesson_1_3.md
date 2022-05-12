@@ -174,6 +174,10 @@ Here is an abridged table of keybindings in tmux and what they do (note that thi
 | `s`   | Horizontal split              |
 | `tab` | Cycle between panes           |
 | `x`   | Kills currently selected pane |
+| `c`   | Creates a new window          |
+| `n`   | Cycles to next window         |
+| `p`   | Cycles to previous window     |
+| `&`   | Kills current window          |
 
 You can resize your panes by clicking and dragging with your mouse at the border, and you can right click any of the panes as well to close them or create another split within them.  For a full list of keybindings, you can look in the file `~/.tmux.conf`, or consult the internet for the default keybindings.
 
