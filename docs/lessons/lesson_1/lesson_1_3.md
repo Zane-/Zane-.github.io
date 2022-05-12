@@ -162,11 +162,11 @@ $ cd ~/dotfiles && ./tmux.sh
 
 This will install tmux to your system, copy over some configuration, and install plugins. After the script completes, you will need to run the command `source ~/.zshrc` (or the alias `sz`) again to reload your shell. If you see the line `.tmux.conf:12: no current session`, hit `q` and it should start one. You should now see a status bar at the bottom of your terminal, indicating your username, hostname, running program, and the time.
 
-#### tmux keybindings
+#### tmux shortcuts
 
-To enter a tmux keybinding, you first press the assigned prefix key. I have set this to be `Ctrl+a`: if you press `Ctrl+a`, you should see a symbol with `^A` on the status bar. This symbol indicates tmux is ready to receive a command.
+To enter a tmux shortcut, you first press the assigned prefix key. I have set this to be `Ctrl+a`: if you press `Ctrl+a`, you should see a symbol with `^A` on the status bar. This symbol indicates tmux is ready to receive a command.
 
-Here is an abridged table of keybindings in tmux and what they do (note that this is my personal configuration and not anything default to tmux):
+Here is an abridged table of shortcuts in tmux and what they do (note that this is my personal configuration and not anything default to tmux):
 
 | Key   | Action                        |
 |-------|-------------------------------|
@@ -174,8 +174,12 @@ Here is an abridged table of keybindings in tmux and what they do (note that thi
 | `s`   | Horizontal split              |
 | `tab` | Cycle between panes           |
 | `x`   | Kills currently selected pane |
+| `c`   | Creates a new window          |
+| `n`   | Cycles to next window         |
+| `p`   | Cycles to previous window     |
+| `&`   | Kills current window          |
 
-You can resize your panes by clicking and dragging with your mouse at the border, and you can right click any of the panes as well to close them or create another split within them.  For a full list of keybindings, you can look in the file `~/.tmux.conf`, or consult the internet for the default keybindings.
+You can resize your panes by clicking and dragging with your mouse at the border, and you can right click any of the panes as well to close them or create another split within them.  For a full list of shortcuts, you can look in the file `~/.tmux.conf`, or consult the internet for the default shortcuts.
 
 ### fasd
 
@@ -195,11 +199,12 @@ See the bottom of `~/dotfiles/.aliases` for a full list of fasd command aliases.
 
 ### fzf
 
-fzf is a command that lets you search for a text pattern in the output of another command. I have added keybindings to zsh to invoke it.
+fzf is a command that lets you search for a text pattern in the output of another command. I have added shortcuts to zsh to invoke it.
 
 If you press `Ctrl+t`, a tmux pane should popup (note that nothing will happen if you didn't install tmux), and you can search for any file in your current directory as well as any nested directories. A preview of the file will also be displayed. Pressing `Enter` on the selected file will paste it into your command prompt, so if you are typing a command that takes a file, you can type the command, then use `Ctrl+t` to search for the file you want.
 
-Another useful keybinding is `Ctrl+r` this opens up a tmux pane containing your command history. You can search for any command you have previously entered and paste it into your command prompt.
+Another useful shortcut is `Ctrl+r` this opens up a tmux pane containing your command history. You can search for any command you have previously entered and paste it into your command prompt.
+
 
 Additionally, you can use `Alt+c` to open a tmux pane that will allow you to search for a directory and `cd` into it.
 
