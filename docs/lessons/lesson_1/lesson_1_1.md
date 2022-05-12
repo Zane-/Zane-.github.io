@@ -232,11 +232,62 @@ $ grep -r bash
 
 The output should show you each line containing 'bash' in each file in your home directory. The `-r` flag we passed means 'recursive', so it searches each file in the directory. You can also specify the file you want to search — for example `grep bash .bashrc` to only search the file `.bashrc`.
 
+## Package Managers
+
+A package manager is a program that handles the installation, updating, or removal of software on a system. It keeps track of a list of repositories, which are simply remote sources of packages you can download.
+
+The package manager that ships with Ubuntu is called the APT package manager, which stands for Advanced Package Tool. The command for APT is `apt-get`, and typically must be used with the `sudo` command because it modifies your system.
+
+### Refreshing Sources
+
+The repositories that you have access to with APT can be refreshed via the `update` command:
+
+```sh
+$ sudo apt-get update
+```
+
+This command must be ran after adding a new source to APT. After it completes, any packages in your sources can be installed.
+
+### Installing Packages
+
+Installing packages is done with the `install` command. You can specify multiple packages to install at once by separating them with spaces:
+
+```sh
+$ sudo apt-get install python3-dev ruby-dev
+```
+
+Note that more packages than you listed may be installed because packages can list _dependencies_. A dependency is a package that another package depends on to work; dependencies will be installed automatically.
+
+### Upgrading Packages
+
+Any installed packages can be upgraded if one is available by using the `upgrade` command:
+
+```sh
+$ sudo apt-get upgrade
+```
+
+This will download the newer version of the package and overwrite the old one.
+
+### Removing Packages
+
+Removing packages is done with the `remove` command:
+
+```sh
+$ sudo apt-get remove python3-dev
+```
+
+Note that removing a package does not remove the dependencies originally installed by it. If those dependencies are no longer needed by any other packages you have installed, you can run this command to clean them up:
+
+```sh
+$ sudo apt-get autoremove
+```
+
 ## Filepaths
 
 In general, there are two types of filepaths: _relative_ and _absolute_.
 
 Relative filepaths are given relative to wherever the filepath is being given. For example, if you are in your home directory (`~`), and there is a folder named `files` with a file `file.txt` inside it, you could refer to this file with the filepath `files/file.txt`. However, if you were inside the directory `~/files`, using `files/file.txt` would no longer work because relative to where we are now, the `files` directory doesn't exist. The correct way to refer to `file.txt` would now just simply be `file.txt`.
+
 
 Absolute filepaths work regardless of what directory you're in. They typically specify something relative to the root directory, `/`, or your home directory, `~`. The root directory is the top-level directory of your Linux operating system, you can display the contents by entering `ls /`.
 
@@ -258,29 +309,38 @@ One particularly dangerous way of using wildcards is deleting files with `rm`. I
 
 ## tldr
 
-| Command | Description                                         | Example                      |
-|---------|-----------------------------------------------------|------------------------------|
-| `ls`    | List files. Use `ls -a` to list hidden files        | `ls ~`, `ls -a`              |
-| `cat`   | Display the contents of a file to your terminal     | `cat file.txt`               |
-| `less`  | Display the contents of a file in a separate view   | `less file.txt`              |
-| `touch` | Creates a file if it does not exist                 | `touch file.txt`             |
-| `mkdir` | Creates a directory                                 | `mkdir files`                |
-| `mv`    | Moves a file or directory                           | `mv file.txt files`          |
-| `cp`    | Copies an input file/directory to a destination     | `cp file.txt files_cp.txt`   |
-| `rm`    | Removes a file. Use `rm -r` to remove a directory   | `rm file.txt`, `rm -r files` |
-| `find`  | Finds files matching a text pattern                 | `find ~/.bash*`              |
-| `grep`  | Search for a text pattern within files              | `grep -r bash`               |
-
-* `~` means home directory, `.` means current directory, `..` means the directory one level above the current directory.
-
-* Relative filepath: a filepath relative to your current working directory. For example: `.bashrc`.
-* Absolute filepath: a filepath starting from the root or home directory. For example: `~/.bashrc` or `/home/$USER/.bashrc`.
+| Command   | Description                                         | Example                      |
+|-----------|-----------------------------------------------------|------------------------------|
+| `sudo`    | Runs the command following `sudo` as admin          | `sudo ls /`                  |
+| `ls`      | List files. Use `ls -a` to list hidden files        | `ls ~`, `ls -a`              |
+| `cat`     | Display the contents of a file to your terminal     | `cat file.txt`               |
+| `less`    | Display the contents of a file in a separate view   | `less file.txt`              |
+| `touch`   | Creates a file if it does not exist                 | `touch file.txt`             |
+| `mkdir`   | Creates a directory                                 | `mkdir files`                |
+| `mv`      | Moves a file or directory                           | `mv file.txt files`          |
+| `cp`      | Copies an input file/directory to a destination     | `cp file.txt files_cp.txt`   |
+| `rm`      | Removes a file. Use `rm -r` to remove a directory   | `rm file.txt`, `rm -r files` |
+| `find`    | Finds files matching a text pattern                 | `find ~/.bash*`              |
+| `grep`    | Search for a text pattern within files              | `grep -r bash`               |
+| `apt-get` | Used for installing, updating, or removing software | `sudo apt-get install bat`   |
 
 * Use `man {command}` if you need help with a command.
 
 * Use `Ctrl+c`, `Ctrl+d`, or `q` to quit a command.
 
 * Use the up/down arrow keys to navigate previously entered commands.
+
+* Do not enter the `$` symbol that is apart of commands I give you to enter, the `$` is a placeholder for your prompt.
+
+* `~` means home directory, `.` means current directory, `..` means the directory one level above the current directory.
+
+* A package manager is a program that manages installing and updating software. The package manager that ships with Ubuntu is called APT.
+
+* Relative filepath: a filepath relative to your current working directory. For example: `.bashrc`.
+
+* Absolute filepath: a filepath starting from the root or home directory. For example: `~/.bashrc` or `/home/$USER/.bashrc`.
+
+* A `*` symbol in a command is known as a wildcard, it means 'anything.'
 
 ## Conclusion
 
