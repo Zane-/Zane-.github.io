@@ -55,5 +55,12 @@ Let's break down this command.
 
 `apt-get` is the command for the Apt Package Manager, which facilities installing/updating/removing packages from repositories (repositories are just remote servers that hold files available for download). `update` tells  `apt-get` to refresh all repositories. The `&&` allows us run multiple commands with one input, so everything before  `&&` is one command, and everything after is a separate one. Here we use it for convenience, but entering both as separate commands would work too. `install` tells `apt-get` that we would like to install some packages, and the `-y` is a flag (flags modify the behavior of commands) that will skip any confirmation prompts. After the `-y` are all the packages we want to install, separated by spaces. All of these packages are available in the default repositories available to Ubuntu, so there should be no need to add any additional ones. The `\` after 'libssl-dev' allows us to split the command to a new line so we can easily read it all.
 
-That's it! You should now have a decent developement environment. Continue with [Lesson 1.1: The Linux Command Line](../lessons/lesson_1_1.md) to learn more about how to navigate the command line.
+That's it! You should now have a decent developement environment. Continue with [Lesson 1.1: The Command Line](../lessons/lesson_1_1.md) to learn more about how to navigate the command line.
 
+## macOS
+
+macOS is a Unix-based operating system (which means it derived from a very old operating system from the 1970s), and already includes a lot of the things we would use from Ubuntu, such as bash. Thus, [Lesson 1.1: The Command Line](../lessons/lesson_1_1.md) will still work on macOS, even though you technically aren't using Linux. The one thing I would recommend is installing a package manager. This makes it easier to install development tools.
+
+### Installing brew
+
+Installing brew is pretty simple, it just takes a single command. Follow the installation settings at [brew.sh](https://brew.sh).
