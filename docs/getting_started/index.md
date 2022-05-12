@@ -59,8 +59,12 @@ That's it! You should now have a decent developement environment. Continue with 
 
 ## macOS
 
-macOS is a Unix-based operating system (which means it derived from a very old operating system from the 1970s), and already includes a lot of the things we would use from Ubuntu, such as bash. Thus, [Lesson 1.1: The Command Line](../lessons/lesson_1_1.md) will still work on macOS, even though you technically aren't using Linux. The one thing I would recommend is installing a package manager. This makes it easier to install development tools.
+macOS is a Unix-based operating system (which means it derived from a very old operating system from the 1970s), and already includes a lot of the things we need from Ubuntu. Most if not all of the commands listed in [Lesson 1.1: The Command Line](../lessons/lesson_1_1.md) will still work on macOS out of the box. The one thing I would recommend is installing a package manager. This makes it easier to install development tools I will reference in future lessons.
 
 ### Installing brew
 
-Installing brew is pretty simple, it just takes a single command. Follow the installation settings at [brew.sh](https://brew.sh).
+Installing brew is pretty simple, it just takes a single command. Follow the installation instructions at [brew.sh](https://brew.sh).
+
+### Installing iTerm2
+
+The default Terminal application on macOS is pretty lackluster. If you would like a better one, I would recommend iTerm2. You can download it for free from [iterm2.com](https://iterm2.com)
