@@ -13,9 +13,6 @@ nav_order: 3
 - TOC
 {:toc}
 
-<<<<<<< Updated upstream
-In [Lesson 1.1](lesson_1_1.html), we learned commands for navigating directories and managing files. In this lesson we will learn more about shells, what scripts are and how to execute them, and 
-=======
 In [Lesson 1.1](lesson_1_1.html), we learned commands for navigating directories and managing files. In this lesson we will learn more about shells, what scripts are and how to execute them, and some better and faster ways of navigating your Linux system.
 
 ## Upgrading your Shell
