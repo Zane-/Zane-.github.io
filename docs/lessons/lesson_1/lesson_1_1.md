@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "1.1 The Linux Command Line"
+title: "1.1 The Command Line"
 parent: Lesson 1
 grand_parent: Lessons
 nav_order: 1
 ---
-# Lesson 1.1: The Linux Command Line
+# Lesson 1.1: The Command Line
 {: .no_toc }
 
 #### Table of contents
@@ -13,7 +13,7 @@ nav_order: 1
 - TOC
 {:toc}
 
-In this lesson we will explore the Linux Command Line and learn some basic commands to deal with creating and navigating files. Skip ahead to [tldr](#tldr) if you want a quick summary.
+In this lesson we will explore the command line and learn some basic commands to deal with creating and navigating files. Skip ahead to [tldr](#tldr) if you want a quick summary.
 
 A program that processes commands is called a _shell_. There are many different shells out there, some popular ones being zsh and fish, but the shell that ships with most distributions of Linux is bash. It stands for <ins>B</ins>ourne <ins>a</ins>gain <ins>sh</ins>ell.
 
@@ -236,9 +236,13 @@ The output should show you each line containing 'bash' in each file in your home
 
 A package manager is a program that handles the installation, updating, or removal of software on a system. It keeps track of a list of repositories, which are simply remote sources of packages you can download.
 
-The package manager that ships with Ubuntu is called the APT package manager, which stands for Advanced Package Tool. The command for APT is `apt-get`, and typically must be used with the `sudo` command because it modifies your system.
+The package manager that ships with Ubuntu is called the APT package manager, which stands for Advanced Package Tool. macOS does not ship with a package manager, but if you followed the guide in [Getting Started](../../getting_started/index.html), you should have the brew package manager.
 
-### Refreshing Sources
+### APT
+
+The command for APT is `apt-get`, and typically must be used with the `sudo` command because it modifies your system.
+
+#### Refreshing Sources
 
 The repositories that you have access to with APT can be refreshed via the `update` command:
 
@@ -246,9 +250,9 @@ The repositories that you have access to with APT can be refreshed via the `upda
 $ sudo apt-get update
 ```
 
-This command must be ran after adding a new source to APT. After it completes, any packages in your sources can be installed.
+This command must be run after adding a new source to APT. After it completes, any packages in your sources can be installed.
 
-### Installing Packages
+#### Installing Packages
 
 Installing packages is done with the `install` command. You can specify multiple packages to install at once by separating them with spaces:
 
@@ -258,7 +262,7 @@ $ sudo apt-get install python3-dev ruby-dev
 
 Note that more packages than you listed may be installed because packages can list _dependencies_. A dependency is a package that another package depends on to work; dependencies will be installed automatically.
 
-### Upgrading Packages
+#### Upgrading Packages
 
 Any installed packages can be upgraded if one is available by using the `upgrade` command:
 
@@ -268,7 +272,7 @@ $ sudo apt-get upgrade
 
 This will download the newer version of the package and overwrite the old one.
 
-### Removing Packages
+#### Removing Packages
 
 Removing packages is done with the `remove` command:
 
@@ -280,6 +284,36 @@ Note that removing a package does not remove the dependencies originally install
 
 ```sh
 $ sudo apt-get autoremove
+```
+
+### homebrew
+
+homebrew is a package manager for macOS, feel free to skip this section if you are not on macOS. The command for homebrew is `brew`.
+
+#### Installing Packages
+
+Installing packages is done with the `install` command. You can specify multiple packages to install at once by separating them with spaces:
+
+```sh
+$ brew install ripgrep fzf
+```
+
+#### Upgrading and Refreshing Packages
+
+Any installed packages can be upgraded and repositories can be refreshed by using the `update` command:
+
+```sh
+$ brew update
+```
+
+This will download the newer version of the package and overwrite the old one.
+
+#### Removing Packages
+
+Removing packages is done with the `uninstall` command:
+
+```sh
+$ brew uninstall ripgrep
 ```
 
 ## Filepaths
