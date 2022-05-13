@@ -4,6 +4,12 @@ title: Getting Started
 nav_order: 1
 ---
 # Getting Started
+{: .no_toc }
+
+#### Table of contents
+{: .no_toc }
+- TOC
+{:toc}
 
 Before you start learning how to code, let's set up our development environment.
 
@@ -34,22 +40,22 @@ For some symbols to show up properly, we need to install a patched nerd-font. I 
 
 ### Installing Build Tools
 
-Now that we've installed Ubuntu, if you open it in Windows Terminal, you should see something like this:  
+Now that we've installed Ubuntu, if you open it in Windows Terminal, you should see something like this:
 
 ```sh
 zane@Zane-PC:~$ _
 ```
 
-This is called the _command prompt_ — used for entering commands to your Linux system. Let's start by installing some useful packages. Paste the following command into your terminal (you may need to use `Ctrl+Shift+V`) and press `Enter`:  
+This is called the _command prompt_ — used for entering commands to your Linux system. Let's start by installing some useful packages. Paste the following command into your terminal (you may need to use `Ctrl+Shift+V`) and press `Enter`:
 
 ```sh
 sudo apt-get update && sudo apt-get install -y bat build-essential libssl-dev \
 libreadline-dev clang clang-format cmake python3-dev nodejs npm ruby ruby-dev
 ```
 
-Note that it will prompt you for the password you set when you first installed Ubuntu. You should see a lot of text flying by showing things being downloaded and installed.  
+Note that it will prompt you for the password you set when you first installed Ubuntu. You should see a lot of text flying by showing things being downloaded and installed.
 
-Let's break down this command.  
+Let's break down this command.
 
 `sudo` is a keyword you put in front of other commmands to indicate you want to run that command as admin. It stands for 'superuser do'. We often need to put `sudo` in front of commands that will modify our system, such as installing packages or deleting important files.
 
