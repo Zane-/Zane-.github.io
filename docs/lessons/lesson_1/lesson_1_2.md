@@ -56,17 +56,19 @@ If you created your key with a different filename, use that instead. The command
 
 Next, we need to add our public key to our Github account. First, output your key and copy the contents to your clipboard:
 
-```sh
-$ cat ~/.ssh/id_ed25519.pub
-```
-
-If you are using WSL, you can use this command to copy directly to your clipboard:
+If you are using Windows Subsystem for Linux (WSL) , you can use this command to copy directly to your clipboard:
 
 ```sh
 $ cat ~/.ssh/id_ed25519.pub | clip.exe
 ```
 
-`|` is called the _pipe_ command, it lets you redirect the output of one command into the input of another. Here we give the command `clip.exe`, which copies whatever you give to it to your clipboard, the output of `cat`, which just displays the file contents to your terminal.
+If you are on macOS, use this command instead:
+
+```sh
+$ cat ~/.ssh/id_ed25519.pub | pbcopy
+```
+
+`|` is called the _pipe_ command, it lets you redirect the output of one command into the input of another. Here we give the output of the `cat` command to either `clip.exe` or `pbcopy`, which copies whatever you give to it to your clipboard.
 
 Now, navigate to the [SSH and GPG keys](https://github.com/settings/keys) settings page on Github, click `New SSH key`, give it a title, paste in your key, and click `Add SSH key`. If it worked, you should now be able to modify any of your repositories hosted on Github from your Ubuntu system.
 
