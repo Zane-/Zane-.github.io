@@ -16,7 +16,7 @@ nav_order: 2
 
 Imagine you're working on a software project with other people. How would you go about sharing all the files? You could simply host all the code on Google Drive or another file sharing service, but what happens when people want to work on the same file at the same time? What happens when someone messes up and you need to undo changes? It turns out someone thought of these problems a long time ago, and the solution is called _version control_ (aka _source control_). The first version control system was created in 1972 (it probably sucked).
 
-In short, a version control system manages changes to a set of files. They store a history of the changes so you can revert to any point of time. There are many different version control systems out there, each with their own advantages and disadvantages, but the most popular system is called _git_. Git was developed in 2005 by Linus Torvalds, the creator of Linux. It is a very powerful tool, but you can get by only knowing a few simple commands.
+In short, a version control system manages changes to a set of files (aka repository). They store a history of the changes so you can revert to any point of time. There are many different version control systems out there, each with their own advantages and disadvantages, but the most popular system is called _git_. Git was developed in 2005 by Linus Torvalds, the creator of Linux. It is a very powerful tool, but you can get by only knowing a few simple commands.
 
 ## Signing up for Github
 
