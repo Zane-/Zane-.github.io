@@ -13,6 +13,10 @@ nav_order: 1
 
 Before you start learning how to code, let's set up our development environment.
 
+## Installing a patched font
+
+For some symbols to show up properly in our command line, we need to install a patched nerd-font. I personally use the Hack Nerd font. You can download it [here](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf). 
+
 ## Windows
 
 If you're on Windows, I recommend installing a Ubuntu subsystem. Since Windows 10, Microsoft has added a Windows Subsystem for Linux (WSL) feature enabling you to install an isolated Linux subsystem on your Windows machine. Linux is a fast and versatile operating system preferred by most developers.
@@ -34,9 +38,9 @@ I recommend installing the Windows Terminal app as your terminal emulator. This 
 
 Open up Windows Terminal and click the dropdown menu in the tab bar, then click `Settings`. Set your default profile to `Ubuntu` so it will open the command prompt to your Ubuntu installation by default. Open a new tab and it should take you your Ubuntu installation.
 
-#### Installing a patched font
+#### Configure Font Settings
 
-For some symbols to show up properly, we need to install a patched nerd-font. I personally use the Hack Nerd font. You can download it [here](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf). Install the font, go to `Settings` in Windows Terminal, then click the hamburger icon in the top left. Click `Defaults` under the Profiles, go to `Appearance`, and select `Hack Nerd Font Mono` as your font face.
+Go to `Settings` in Windows Terminal, then click the hamburger icon in the top left. Click `Defaults` under the Profiles, go to `Appearance`, and select `Hack Nerd Font Mono` as your font face.
 
 ### Installing Build Tools
 
@@ -73,4 +77,4 @@ Installing brew is pretty simple, it just takes a single command. Follow the ins
 
 ### Installing iTerm2
 
-The default Terminal application on macOS is pretty lackluster. If you would like a better one, I would recommend iTerm2. You can download it for free from [iterm2.com](https://iterm2.com)
+The default Terminal application on macOS is pretty lackluster. If you would like a better one, I would recommend iTerm2. You can download it for free from [iterm2.com](https://iterm2.com). Make sure you go into the settings and change your font to the nerd font you installed.
