@@ -21,4 +21,4 @@ In Lesson 1.2, we will learn how to host our software projects remotely using a 
 
 #### Lesson 1.3: Enhancing the Command Line
 
-In Lesson 1.3, we will revisit the Linux command line and learn some new concepts as well as some tools to ease navigating the command line. [tldr](lesson_1_3.html#tldr)
+In Lesson 1.3, we will revisit the command line and learn some new concepts as well as some tools to ease navigating the command line. [tldr](lesson_1_3.html#tldr)
