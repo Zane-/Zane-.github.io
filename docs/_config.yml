@@ -37,7 +37,7 @@ remote_theme: zane-/just-the-docs
 # just-the-docs config
 color_scheme: dark
 
-logo: "/assets/images/python-club.png"
+logo: "/assets/images/python-club-green.png"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
