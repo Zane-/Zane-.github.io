@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "1.3 Enhancing the Command Line"
-parent: Lesson 1
+parent: Lesson 1 - The Tools of the Trade
 grand_parent: Lessons
 nav_order: 3
 ---

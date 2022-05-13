@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lesson 1
+title: Lesson 1 - The Tools of the Trade
 parent: Lessons
 has_children: true
 nav_order: 1
