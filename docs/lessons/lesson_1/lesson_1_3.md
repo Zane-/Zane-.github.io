@@ -25,7 +25,7 @@ $ git clone https://github.com/zane-/dotfiles ~/dotfiles && cd ~/dotfiles
 
 This command will first clone the repo to your home directory, then `cd` into it. If you `ls`, you'll see there are several files and folders, some ending in `.sh`. A file that ends in `.sh` is known as a _shell script_. In short, a shell script is a program that executes multiple commands and has some programming language constructs. If you peer into one using `cat`, you'll see some familiar commands such as `apt-get`, `mv`, `cd`, and more. Shell scripts provide an excellent way to automate long and complex tasks or reproduce something on another system.
 
-The shell scripts I have created in my dotfiles repo contain scripts to replicate my command line setup on any Ubuntu system. To run the script `zsh.sh`, which will install `zsh` and a couple of other useful tools, enter the command:
+The shell scripts I have created in my dotfiles repo contain scripts to replicate my command line setup on Linux or macOS. To run the script `zsh.sh`, which will install `zsh` and a couple of other useful tools, enter the command:
 
 ```sh
 $ ./zsh.sh
@@ -33,13 +33,18 @@ $ ./zsh.sh
 
 `./` followed by an executable filename is how you run an executable from the command line. As the script runs, you should see output indicating things being installed, created, and linked. After the script finishes, enter `cd` to return to your home directory, and enter `ls -a` to show all files. You should now see some new files such as `.zshrc`, `.zshenv` and `.zpreztorc`. These are configuration files used by zsh that determine the behavior and features of your shell.
 
-Now, we need to change our default shell from bash to zsh. Run the following command:
+Now, we need to change our default shell from bash to zsh. We will use the `chsh` command for this, which stands for 'change shell'. The command takes the filepath to the shell executable, which can vary depending on your system. The `where` command will tell you the filepath to a command's executable. Most executables on Linux systems are located in `/bin/`, but there are several other directories too. Enter the following command to determine where your zsh executable is installed:
 
 ```sh
-$ chsh -s /bin/zsh
+$ where zsh
+```
+Next, run the `chsh` command with the filepath returned by `where`, replacing `{your_filepath}` with the filepath returned by `where`:
+
+```sh
+$ chsh -s {your_filepath}
 ```
 
-`chsh` means 'change shell', then we provide it the filepath to the zsh executable. Most executables on Linux systems are located in `/bin/`, but there are several other directories too. If you enter the command `zsh` now, zsh should start and diplay a new command prompt.
+If you enter the command `zsh` now, zsh should start and diplay a new command prompt.
 
 Note that if you skipped installing fonts in [Getting Started](../../getting_started), certain characters will not display correctly.
 
@@ -53,7 +58,7 @@ Note that the features described here are not built-in to zsh by default, but ar
 
 ## File Permissions
 
-All files and directories in Linux has file permissions associated with them. Permissions fall into three categories, _read_, which grants permission to view the file; _write_, which grants permission to modify the file; and _execute_, which grants permission to execute or run the file.
+All files and directories in Unix-based operating systems (Linux or macOS) have file permissions associated with them. Permissions fall into three categories, _read_, which grants permission to view the file; _write_, which grants permission to modify the file; and _execute_, which grants permission to execute or run the file.
 
 ### Viewing Permissions
 
@@ -67,15 +72,15 @@ You should see a big list of files. On the very left of each row are the file pe
 
 The first character is for read permission, it will be `r` if read permission is granted, or `-` if not. Next is the character `w` for write permission, and `x` for execute permission.
 
-The first set of rwx permissions is for the owner, which is the user who created the file. The next set is for any user who is in the same group as the owner (a group in linux is just a label given to a set of users), and the last set is for everyone else.
+The first set of rwx permissions is for the owner, which is the user who created the file. The next set is for any user who is in the same groups as the owner (a group in linux is just a label given to a set of users), and the last set is for everyone else.
 
-In conclusion, you would read the permission `drwxr-xr-x` as a "directory that grants the owner read, write, and execute permission, the owner's group read and execute, but not write permissions, and everyone else only read and execute permission as well.
+In conclusion, you would read the permission `drwxr-xr-x` as a "directory that grants the owner read, write, and execute permission, the owner's groups read and execute, but not write permissions, and everyone else only read and execute permission as well.
 
 ### Changing Permissions
 
-You can change the permission of a file or directory by using the `chmod` command. The `chmod` command takes a numeric representation of the permission to set along with the file to change it for.
+You can change the permissions of a file or directory by using the `chmod` command. The `chmod` command takes a numeric representation of the permissions to set along with the file to change it for.
 
-The numeric representation is three digits, where each digit is either 7, 6, 3, or 0 and corresponds to the same ordering of permission sets previously mentioned: owner, owner's group, everyone else.
+The numeric representation is three digits, where each digit is either 7, 6, 3, or 0 and corresponds to the same ordering of user sets previously mentioned: owner, owner's groups, everyone else.
 
 To calculate the digit to use, you add up the integer values corresponding to the permission you want to grant:
 
@@ -109,15 +114,15 @@ $ chmod 777 zsh.sh
 
 Check `ls -l zsh.sh` again to see that the 'x' is back.
 
-If you are on a Linux system shared by multiple people (each with their own user), file permissions are a simple but secure way to restrict file access to only the people that should have it.
+If you are on a system shared by multiple people (each with their own user), file permissions are a simple but secure way to restrict file access to only the people that should have it.
 
 ## The $PATH Environment Variable
 
-At this point, you may be wondering how Linux knows what commands exist and what commands do not. The answer is the `$PATH` environment variable. As discussed earlier, an environment variable is a named variable accessible anywhere on your system and is often used to set default behavior such as text editors, browsers, and more.
+At this point, you may be wondering how the command line knows which commands exist and which commands do not. The answer is the `$PATH` environment variable. As discussed earlier, an environment variable assigns a name to a value that is accessible anywhere on your system. They are often used to set defaults such as text editors, browsers, and more.
 
 The `$PATH` variable is a list of directories separated by colons, for example `/usr/share/bin:/usr/local/bin:/usr/bin`. Any executables in one of the directories in the list will be made available to run as a command from your shell. You can view your own `$PATH` variable by entering the command `echo $PATH`.
 
-If you ever install something on your Linux system that you expect to be runnable as a command and it says "command not found," it is likely due to wherever the commmand executable is installed not being in `$PATH`. The way to fix this is to update your shell's configuration files to include the missing directory.
+If you ever install something that you expect to be runnable as a command and it says "command not found," it is likely due to wherever the commmand executable is installed not being in `$PATH`. The way to fix this is to update your shell's configuration files to include the missing directory.
 
 If you peer into `~/.zshenv` with `cat ~/.zshenv`, you will see the line:
 
@@ -125,7 +130,7 @@ If you peer into `~/.zshenv` with `cat ~/.zshenv`, you will see the line:
 export PATH="$HOME/.local/bin:$HOME/.npm-packages/bin:$PATH"
 ```
 
-This line uses the `export` command, which modifies an environment variable, then specifies `PATH` as the variable name to change. You'll then notice we reference the `$HOME` environment variable in the value, which points to our home directory, add a few more directories separated by colons, and then end it with `$PATH`. Ending with `$PATH` is essential here so we don't overwrite it completely; this includes whatever directories `$PATH` used to have.
+This line uses the `export` command, which modifies an environment variable, then specifies `PATH` as the variable name to change. You'll then notice we reference the `$HOME` environment variable in the value (which points to our home directory), add a few more directories separated by colons, and then end it with `$PATH`. Ending with `$PATH` is essential here so we don't overwrite it completely; we need to include whatever directories `$PATH` used to have whenever we modify it ourselves.
 
 ## Command Aliases
 
@@ -139,7 +144,7 @@ $ alias cls="clear"
 
 The `clear` command clears the output on your terminal, after we run this command, we can now run the `clear` command with the alias `cls`. However, aliases set this way do not persist across reboots. To persist an alias, we need to add them to our shell configuration so they are loaded each time we start our shell.
 
-If you run the command `cat ~/.zshrc`, you should see:
+If you run the command `cat ~/.zshrc`, you should see the line:
 
 ```sh
 # Source aliases
@@ -148,7 +153,7 @@ source ~/dotfiles/.aliases
 
 The `source` command takes a file and executes the commands in it. If you run `cat ~/dotfiles/.aliases`, you will see a long list of `alias` commands, one per line. When your zsh shell first loads, the `~/.zshrc` file will be loaded, which then loads the `~/dotfiles/.aliases` file.
 
-If you ever want to declare your own aliases, you can add them to this file, then run the command `sal` manually (which is an alias to `source ~/dotfiles/.aliases`), or, you could create your own file somewhere else and source it in the file `~/.zshrc`. Note that changes to the `~/.zshrc` file don't take effect until you source that file using the `source` command or restart zsh.
+If you ever want to declare your own aliases, you can add them to this file, then run the command `sal` (which is an alias to `source ~/dotfiles/.aliases`), or, you could create your own file somewhere else and source it in the file `~/.zshrc`. Note that changes to the `~/.zshrc` file don't take effect until you source that file using the `source` command or restart zsh.
 
 ## Productivity Tools
 
@@ -160,13 +165,13 @@ tmux stands for 'terminal multiplexer'. It is a program that runs in your shell 
 $ cd ~/dotfiles && ./tmux.sh
 ```
 
-This will install tmux to your system, copy over some configuration, and install plugins. After the script completes, you will need to run the command `source ~/.zshrc` (or the alias `sz`) again to reload your shell. If you see the line `.tmux.conf:12: no current session`, hit `q` and it should start one. You should now see a status bar at the bottom of your terminal, indicating your username, hostname, running program, and the time.
+This will install tmux to your system, copy over some configuration, and install plugins. After the script completes, you may need to run the command `source ~/.zshrc` (or the alias `sz`) again to reload your shell. If you see the line `.tmux.conf:12: no current session`, hit `q` and it should start one. You should now see a status bar at the bottom of your terminal, indicating your username, hostname, running program, and the time.
 
 #### tmux shortcuts
 
 To enter a tmux shortcut, you first press the assigned prefix key. I have set this to be `Ctrl+a`: if you press `Ctrl+a`, you should see a symbol with `^A` on the status bar. This symbol indicates tmux is ready to receive a command.
 
-Here is an abridged table of shortcuts in tmux and what they do (note that this is my personal configuration and not anything default to tmux):
+Here is an abridged table of shortcuts in tmux and what they do (note that some of these are from my personal configuration and not anything default to tmux):
 
 | Key   | Action                        |
 |-------|-------------------------------|
@@ -179,11 +184,11 @@ Here is an abridged table of shortcuts in tmux and what they do (note that this 
 | `p`   | Cycles to previous window     |
 | `&`   | Kills current window          |
 
-You can resize your panes by clicking and dragging with your mouse at the border, and you can right click any of the panes as well to close them or create another split within them.  For a full list of shortcuts, you can look in the file `~/.tmux.conf`, or consult the internet for the default shortcuts.
+You can resize your panes by clicking and dragging with your mouse at the border, and you can right click any of the panes as well to close them or create another split within them.  For a full list of the shortcuts I created, you can look in the file `~/.tmux.conf`, or consult the internet for the default shortcuts.
 
 ### fasd
 
-fasd is a tool that makes navigating directories and editing files a lot quicker. It stores a database of your most-used directories, and when you type in a fasd command along with a substring of a directory you want to jump to, it will intelligently complete the rest of the directory you likely intended. As soon as you installed zsh, `fasd` has been tracking the directories you've visited.
+fasd is a tool that makes navigating directories and editing files a lot quicker. It stores a database of your most-accessed directories and files, and when you type in a fasd command along with a substring of a directory you want to jump to, it will intelligently complete the rest of the directory you likely intended. As soon as you installed zsh, `fasd` has been tracking the directories you've visited.
 
 If you try the command:
 
@@ -210,13 +215,22 @@ Additionally, you can use `Alt+c` to open a tmux pane that will allow you to sea
 
 ### exa
 
-exa is an enhanced version of the `ls` command that includes icons for files as well as better coloring. To install it, we need to add a PPA. PPA stands for personal package archive, and they allow you to add another source to the `apt` package manager to install things from. To install exa, run the command:
+exa is an enhanced version of the `ls` command that includes icons for files as well as better coloring. To install it, we need to add a PPA. PPA stands for personal package archive, and they allow you to add another source to the `apt` package manager to install things from.
+
+To install exa on Ubuntu, run the command:
 
 ```sh
 $ sudo add-apt-repository ppa:spvkgn/exa && sudo apt-get update && sudo apt-get install exa
 ```
 
-This command will add the new PPA repository, refresh APT, then install exa. Below are the aliases I use to run the `exa` command:
+This command will add the new PPA repository, refresh APT, then install exa.
+
+To install exa on macOS, run the command:
+
+```sh
+$ brew install exa
+```
+Below are the aliases I use to run the `exa` command:
 
 | Command | Action                       |
 |---------|------------------------------|
@@ -232,11 +246,11 @@ bat is an enhanced version of `cat` that includes syntax highlighting, line numb
 bat ~/.zshrc
 ```
 
-It will open a scrollable view of the `~/.zshrc` file. Navigate with the arrow keys, or press `q` to quit. If a file is small enough to fit on-screen, bat will display it directly instead of opening another window.
+It will open a scrollable view of the `~/.zshrc` file. Navigate with the arrow keys, or press `q` to quit. If a file is small enough to fit on-screen, bat will display it directly to your terminal instead of opening a separate view.
 
 ### ripgrep
 
-ripgrep is just like the `grep` command, it searches for patterns in files, but it is a lot faster and a little easier to use. It should already be installed if you ran the `zsh.sh` script; the command is `rg`. The basic usage is `rg` followed by the text pattern to search for, then optionally a file to search in. If no file is given, it will search all files in the current directory as well as any subdirectories. Note that by default, ripgrep does not search hidden files (files starting with '.'), you must pass the `--hidden` flag to search these files.
+ripgrep is just like the `grep` command. It searches for patterns in files, but it is a lot faster and a little easier to use. It should already be installed if you ran the `zsh.sh` script; the command is `rg`. The basic usage is `rg` followed by the text pattern to search for, then optionally a file to search in. If no file is given, it will search all files in the current directory as well as any subdirectories. Note that by default, ripgrep does not search hidden files (files starting with '.'), you must pass the `--hidden` flag to search these files.
 
 To search for all files with the pattern 'alias' in them, we would enter:
 
@@ -260,9 +274,9 @@ You should see a bunch of files returned along with the line numbers where the w
 
 * PPA stands for personal package archive, and is how you can add third-party repositories as a source for the APT package manager.
 
-* tmux is a program that lets you run multiple shells in your terminal at once.
+* tmux is a program that lets you run multiple windows in your terminal at once.
 
-* fasd is a program that keeps track of your visited directories and lets you jump to them with shortcuts.
+* fasd is a program that keeps track of your visited directories and files and lets you access them with with a substring.
 
 * fzf is a program that lets you search through the output of other commands with text patterns.
 
@@ -274,5 +288,5 @@ You should see a bunch of files returned along with the line numbers where the w
 
 ## Conclusion
 
-If you followed through this lesson, you should now have a very powerful terminal set-up that will enable you to multitask and quickly navigate between files and directories. Continue to [Lesson 1.4: Text Editors](lesson_1_4.html) to pick a text editor to use for programming.
+If you followed through this lesson, you should now have a very powerful command line set-up that will enable you to multitask and quickly navigate between files and directories. Continue to [Lesson 1.4: Text Editors](lesson_1_4.html) to pick a text editor to use for programming.
 
