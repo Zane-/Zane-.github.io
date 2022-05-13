@@ -54,16 +54,16 @@ If you created your key with a different filename, use that instead. The command
 
 #### Adding your SSH key to Github
 
-Next, we need to add our key to our Github account. First, output your key and copy the contents to your clipboard:
+Next, we need to add our public key to our Github account. First, output your key and copy the contents to your clipboard:
 
 ```sh
-$ cat ~/.ssh/id_ed25519
+$ cat ~/.ssh/id_ed25519.pub
 ```
 
 If you are using WSL, you can use this command to copy directly to your clipboard:
 
 ```sh
-$ cat ~/.ssh/id_ed25519 | clip.exe
+$ cat ~/.ssh/id_ed25519.pub | clip.exe
 ```
 
 `|` is called the _pipe_ command, it lets you redirect the output of one command into the input of another. Here we give the command `clip.exe`, which copies whatever you give to it to your clipboard, the output of `cat`, which just displays the file contents to your terminal.
