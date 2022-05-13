@@ -13,7 +13,7 @@ nav_order: 3
 - TOC
 {:toc}
 
-In [Lesson 1.1](lesson_1_1.html), we learned commands for navigating directories and managing files. In this lesson we will learn more about shells, what scripts are and how to execute them, and some better and faster ways of navigating your Linux system.
+In [Lesson 1.1](lesson_1_1.html), we learned commands for navigating directories and managing files. In this lesson we will learn more about shells, what scripts are and how to execute them, and some better and faster ways of navigating your command line.
 
 ## Upgrading your Shell
 
@@ -31,7 +31,7 @@ The shell scripts I have created in my dotfiles repo contain scripts to replicat
 $ ./zsh.sh
 ```
 
-`./` followed by an executable filename is how you run an executable in Linux. As the script runs, you should see output indicating things being installed, created, and linked. After the script finishes, enter `cd` to return to your home directory, and enter `ls -a` to show all files. You should now see some new files such as `.zshrc`, `.zshenv` and `.zpreztorc`. These are configuration files used by zsh that determine the behavior and features of your shell.
+`./` followed by an executable filename is how you run an executable from the command line. As the script runs, you should see output indicating things being installed, created, and linked. After the script finishes, enter `cd` to return to your home directory, and enter `ls -a` to show all files. You should now see some new files such as `.zshrc`, `.zshenv` and `.zpreztorc`. These are configuration files used by zsh that determine the behavior and features of your shell.
 
 Now, we need to change our default shell from bash to zsh. Run the following command:
 
@@ -39,7 +39,7 @@ Now, we need to change our default shell from bash to zsh. Run the following com
 $ chsh -s /bin/zsh
 ```
 
-`chsh` means 'change shell', then we provide it the filepath to the zsh executable. Most executables in your Linux system are located in `/bin/`, but there are several other directories too. If you enter the command `zsh` now, zsh should start and diplay a new command prompt.
+`chsh` means 'change shell', then we provide it the filepath to the zsh executable. Most executables on Linux systems are located in `/bin/`, but there are several other directories too. If you enter the command `zsh` now, zsh should start and diplay a new command prompt.
 
 Note that if you skipped installing fonts in [Getting Started](../../getting_started), certain characters will not display correctly.
 
@@ -115,7 +115,7 @@ If you are on a Linux system shared by multiple people (each with their own user
 
 At this point, you may be wondering how Linux knows what commands exist and what commands do not. The answer is the `$PATH` environment variable. As discussed earlier, an environment variable is a named variable accessible anywhere on your system and is often used to set default behavior such as text editors, browsers, and more.
 
-The `$PATH` variable is a list of directories separated by colons, for example `/usr/share/bin:/usr/local/bin:/usr/bin`. Any executables in one of the directories in the list will be made available to run as a command from your shell.
+The `$PATH` variable is a list of directories separated by colons, for example `/usr/share/bin:/usr/local/bin:/usr/bin`. Any executables in one of the directories in the list will be made available to run as a command from your shell. You can view your own `$PATH` variable by entering the command `echo $PATH`.
 
 If you ever install something on your Linux system that you expect to be runnable as a command and it says "command not found," it is likely due to wherever the commmand executable is installed not being in `$PATH`. The way to fix this is to update your shell's configuration files to include the missing directory.
 
