@@ -41,6 +41,8 @@ aux_links:
     "Join Discord Server":
         - "https://discord.gg/9Ktkh9S8Mj"
 
+aux_links_new_tab: true
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
