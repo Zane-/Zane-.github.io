@@ -60,9 +60,15 @@ Note that it will prompt you for the password you set when you first installed U
 
 Let's break down this command.
 
-`sudo` is a keyword you put in front of other commmands to indicate you want to run that command as admin. It stands for 'superuser do'. We often need to put `sudo` in front of commands that will modify our system, such as installing packages or deleting important files.
+* `sudo` is a command put in front of other commmands to indicate to run that command as admin. It stands for 'superuser do'. We often need to put `sudo` in front of commands that will modify our system, such as installing packages or deleting important files.
 
-`apt-get` is the command for the Apt Package Manager, which facilities installing/updating/removing packages from repositories (repositories are just remote servers that hold files available for download). `update` tells  `apt-get` to refresh all repositories. The `&&` allows us run multiple commands with one input, so everything before  `&&` is one command, and everything after is a separate one. Here we use it for convenience, but entering both as separate commands would work too. `install` tells `apt-get` that we would like to install some packages, and the `-y` is a flag (flags modify the behavior of commands) that will skip any confirmation prompts. After the `-y` are all the packages we want to install, separated by spaces. All of these packages are available in the default repositories available to Ubuntu, so there should be no need to add any additional ones. The `\` after 'libssl-dev' allows us to split the command to a new line so we can easily read it all.
+* `apt-get` is the command for the APT Package Manager, which manages installing software on your system.
+
+* `update` tells `apt-get` to refresh all package sources.
+
+* `&&` allows us run multiple commands with one input, so everything before  `&&` is one command, and everything after is a separate one. Here we use it for convenience, but entering both as separate commands would work too.
+
+* `install` tells `apt-get` that we would like to install some packages, and the `-y` is a flag (flags modify the behavior of commands) that will skip any confirmation prompts. After the `-y` are all the packages we want to install, separated by spaces. All of these packages are available in the default repositories available to Ubuntu, so there should be no need to add any additional ones. The `\` after 'libssl-dev' allows us to split the command to a new line so we can easily read it all.
 
 ## macOS
 
