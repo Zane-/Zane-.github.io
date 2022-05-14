@@ -188,7 +188,7 @@ There are various other ways to use `git reset`, including throwing away all cha
 #### Pushing Changes
 {: .no_toc }
 
-After you create your commit with the `test.txt` file, we can push it to our remote repository by using the `git push` command. The command takes the remote repositories URL, as well as the branch to push to. When we create a repo using Github, our branch will be named 'main' by default. For the url, we can use the shorthand 'origin' to refer to the url we originally cloned our repo from. Putting that together, we can push our change to Github using the command:
+After you create a commit, we can push it to the remote repository by using the `git push` command. The command takes the remote repositories URL, as well as the branch to push to. When we create a repo using Github, our branch will be named 'main' by default. For the url, we can use the shorthand 'origin' to refer to the url we originally cloned our repo from. Putting that together, we can push our change to Github using the command:
 
 ```sh
 $ git push origin main
