@@ -260,6 +260,7 @@ rg --hidden alias
 
 You should see a bunch of files returned along with the line numbers where the word 'alias' occurred.
 
+`rg` can also take the place of the `find` command if you pass the `--files` flag to it. This tells `rg` to only search filenames isntead of the content inside files.
 ## tldr
 
 * A script is a file containing a series of commands and other logic that can be executed.
