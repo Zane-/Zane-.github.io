@@ -11,7 +11,7 @@ nav_order: 1
 - TOC
 {:toc}
 
-Before you start learning development, let's set up our development environment.
+Before you start learning, we need to set up a development environment.
 
 ## Installing a patched font
 
@@ -22,26 +22,32 @@ For some symbols to show up properly in our command line, we need to install a p
 If you're on Windows, I recommend installing a Ubuntu subsystem. Since Windows 10, Microsoft has added a Windows Subsystem for Linux (WSL) feature enabling you to install an isolated Linux subsystem on your Windows machine. Linux is a fast and versatile operating system preferred by most developers.
 
 ### Enabling the Windows Subsystem for Linux Feature
+{: .no_toc }
 
 To use WSL, we first need to enable it via the Control Panel. Open your start menu using the `Win` key and search for `Turn Windows features on or off`. Scroll down to the bottom and check the box for `Windows Subsystem for Linux`. It will prompt you to restart your machine.
 
 ### Installing WSL
+{: .no_toc }
 
 To enable WSL and install Ubuntu, which is a distribution of Linux, follow the instructions from [Install Linux On Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install) at Microsoft. Note that you may have to follow the guide [Manual installation steps for older versions of WSL](https://docs.microsoft.com/en-us/windows/wsl/install-manual) if you are on an older build of Windows.
 
 ### Installing Windows Terminal
+{: .no_toc }
 
 I recommend installing the Windows Terminal app as your terminal emulator. This is the program that you will use to access your Ubuntu installation and input commands. You can find it at the Microsoft Store [here](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=US).
 
 #### Set Ubuntu as the default profile
+{: .no_toc }
 
 Open up Windows Terminal and click the dropdown menu in the tab bar, then click `Settings`. Set your default profile to `Ubuntu` so it will open the command prompt to your Ubuntu installation by default. Open a new tab and it should take you your Ubuntu installation.
 
 #### Configure Font Settings
+{: .no_toc }
 
 Go to `Settings` in Windows Terminal, then click the hamburger icon in the top left. Click `Defaults` under the Profiles, go to `Appearance`, and select `Hack Nerd Font Mono` as your font face.
 
 ### Installing Build Tools
+{: .no_toc }
 
 Now that we've installed Ubuntu, if you open it in Windows Terminal, you should see something like this:
 
@@ -75,10 +81,12 @@ Let's break down this command.
 macOS is a Unix-based operating system (which means it derived from a very old operating system from the 1970s), and already includes a lot of the things we need from Ubuntu. Most if not all of the commands listed in [Lesson 1.1: The Command Line](../lessons/lesson_1/lesson_1_1.md) will still work on macOS out of the box. The one thing I would recommend is installing a package manager. This makes it easier to install development tools I will reference in future lessons.
 
 ### Installing brew
+{: .no_toc }
 
 Installing brew is pretty simple, it just takes a single command. Follow the installation instructions at [brew.sh](https://brew.sh).
 
 ### Installing iTerm2
+{: .no_toc }
 
 The default Terminal application on macOS is pretty lackluster. If you would like a better one, I would recommend iTerm2. You can download it for free from [iterm2.com](https://iterm2.com).
 
