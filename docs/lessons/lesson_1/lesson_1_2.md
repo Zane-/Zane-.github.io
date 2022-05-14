@@ -146,7 +146,7 @@ $ git status
 
 you should see that you have a new file change to be committed.
 
-A useful shortcut with `git add` is `git add .`. This means to stage all file changes in your repo starting from your current directory.
+A useful shortcut you should know is `git add .`, which tells git stage all changes in your repo starting from your current directory.
 
 #### Committing Changes
 {: .no_toc }
@@ -157,9 +157,13 @@ To commit the staged changes, use the `git commit` command. If you only enter `g
 $ git commit -m "Added test.txt"
 ```
 
-Commit messages should be somewhat descriptive, so you know what was changed in that commit in case you need to undo it. Now that our changes are committed, we can do whatever we want in our repo and it will not be included in our push to Github. For more changes to be included, we need to use `git add` and `git commit` again.
+Commit messages should be somewhat descriptive, so you know what was changed in that commit in case you need to undo it.
 
-A commit acts as a sort of checkpoint for the repo; it is possible to restore the repo to any commit in case anything bad happens. As a general rule of thumb, you should not include too many changes in a commit at the same time because it becomes more likely to break something. For example, if something breaks in a large commit containing a dozen different changes, all of those changes have to be rolled back instead of just the offending change. Small changes also make it easier to figure out what actually broke something.
+Now that our changes are committed, we can do whatever we want in our repo and it will not be included in our push to Github. For more changes to be included, we need to use `git add` and `git commit` again.
+
+A commit acts as a sort of checkpoint for the repo; it is possible to restore the repo to any commit in case anything bad happens.
+
+As a general rule of thumb, you should not include too many changes in a commit at the same time because it becomes more likely to break something. For example, if something breaks in a large commit containing a dozen different changes, all of those changes have to be rolled back instead of just the offending change. Small changes also make it easier to figure out what actually broke something.
 
 ##### Resetting a Commit
 {: .no_toc }
