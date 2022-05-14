@@ -188,7 +188,7 @@ You can resize your panes by clicking and dragging with your mouse at the border
 
 ### fasd
 
-fasd is a tool that makes navigating directories and editing files a lot quicker. It stores a database of your most-accessed directories and files, and when you type in a fasd command along with a substring of a directory you want to jump to, it will intelligently complete the rest of the directory you likely intended. As soon as you installed zsh, `fasd` has been tracking the directories you've visited.
+fasd is a tool that makes navigating directories and editing files a lot quicker. It stores a database of your most-accessed directories and files, and when you type in a fasd command along with a substring of a directory or file you want, it will intelligently complete the rest of the directory or file. As soon as you installed zsh, `fasd` has been tracking the directories you've visited.
 
 If you try the command:
 
@@ -208,7 +208,7 @@ fzf is a command that lets you search for a text pattern in the output of anothe
 
 If you press `Ctrl+t`, a tmux pane should popup (note that nothing will happen if you didn't install tmux), and you can search for any file in your current directory as well as any nested directories. A preview of the file will also be displayed. Pressing `Enter` on the selected file will paste it into your command prompt, so if you are typing a command that takes a file, you can type the command, then use `Ctrl+t` to search for the file you want.
 
-Another useful shortcut is `Ctrl+r` this opens up a tmux pane containing your command history. You can search for any command you have previously entered and paste it into your command prompt.
+Another useful shortcut is `Ctrl+r`, which opens up a tmux pane containing your command history. You can search for any command you have previously entered and paste it into your command prompt.
 
 
 Additionally, you can use `Alt+c` to open a tmux pane that will allow you to search for a directory and `cd` into it.
@@ -268,7 +268,7 @@ You should see a bunch of files returned along with the line numbers where the w
 
 * File permissions control who can read, write, or execute files. They can be changed with the `chmod` command and viewed with the `ls -l` command.
 
-* The `$PATH` environment variable is how your linux system knows what commands are available, and it is a colon-separated list of directories.
+* The `$PATH` environment variable is how your linux system knows what commands are available, and it is a colon-separated list of directories. You can view it with the command `echo $PATH`.
 
 * A command alias is another way to refer to a command. The `alias` command displays all aliases on your system.
 
@@ -288,5 +288,7 @@ You should see a bunch of files returned along with the line numbers where the w
 
 ## Conclusion
 
-If you followed through this lesson, you should now have a very powerful command line set-up that will enable you to multitask and quickly navigate between files and directories. Continue to [Lesson 1.4: Text Editors](lesson_1_4.html) to pick a text editor to use for programming.
+If you followed through this lesson, you should now have a very powerful command line set-up that will enable you to multitask and quickly navigate between files and directories.
+
+Continue to [Lesson 1.4: Text Editors](lesson_1_4.html) to pick a text editor to use for programming.
 

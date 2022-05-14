@@ -85,6 +85,12 @@ The `git` commands ships with most distributions of Linux by default, so you sho
 $ sudo apt-get install git
 ```
 
+or if on macOS:
+
+```sh
+$ brew install git
+```
+
 ### Cloning a Repository
 
 To clone a remote repository (ie a repo hosted on Github), use the `git clone` command. The command takes the remote url to the repo as well as the directory to clone it to. If no directory is provided, it clones it to the current directory using the title of the repo. From your `python-code` repo on Github, click the green `Code` button, then the `SSH` tab in the popup window. Copy the url to your clipboard, paste it after the following command, and press `Enter`:
@@ -179,7 +185,6 @@ Total 3 (delta 0), reused 0 (delta 0)
 
 Refresh your repo on Github, and you should see your `test.txt` file there. Click on it to see that it contains the content we wrote to it. You can share your webpage url with anyone in the world, and they will be able to see the contents of your `test.txt` file.
 
-Now, let's delete the `test.txt` file so we can demonstrate refreshing the repo from our command line. Click the trash icon located on the right-hand side of the screen, then the green `Commit changes` button to confirm.
 
 #### Pulling Changes
 
@@ -239,3 +244,5 @@ Earlier, we noted that the default branch that Github creates when we made our r
 You should now be able to create and modify repos using Github and `git`. I left out a lot of details, so feel free to search for documentation online if you run into any problems or want to learn more.
 
 From now on, I encourage you to store any files you work on throughout lessons in a repository on Github, as it will enable me to see them and help if needed, and it is a great way to copy projects between computers.
+
+Continue on to [Lesson 1.3: Enhancing the Command Line](lesson_1_3.md) to improve your command line setup.

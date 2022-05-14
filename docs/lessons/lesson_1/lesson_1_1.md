@@ -37,7 +37,7 @@ One thing you should know that if any command seems to freeze, or you want to ca
 
 ### Viewing Files
 
-The directory you are currently in is displayed in your prompt. When you first open your terminal, it will open to your home directory by default. The home directory in Linux is referred to by `~`.
+The directory you are currently in is displayed in your prompt. When you first open your terminal, it will open to your home directory by default. The home directory is referred to by `~`.
 
 To list all the files in your current directory, enter the command:
 
@@ -45,7 +45,7 @@ To list all the files in your current directory, enter the command:
 $ ls
 ```
 
-You should see nothing. This is because by default, `ls` does not show hidden files. Files in Linux are hidden if they start with a `.`. Now try:
+You should see nothing. This is because by default, `ls` does not show hidden files. Files are hidden if they start with a `.`. Now try:
 
 ```sh
 $ ls -a
@@ -239,13 +239,13 @@ In general, there are two types of filepaths: _relative_ and _absolute_.
 Relative filepaths are given relative to wherever the filepath is being given. For example, if you are in your home directory (`~`), and there is a folder named `files` with a file `file.txt` inside it, you could refer to this file with the filepath `files/file.txt`. However, if you were inside the directory `~/files`, using `files/file.txt` would no longer work because relative to where we are now, the `files` directory doesn't exist. The correct way to refer to `file.txt` would now just simply be `file.txt`.
 
 
-Absolute filepaths work regardless of what directory you're in. They typically specify something relative to the root directory, `/`, or your home directory, `~`. The root directory is the top-level directory of your Linux operating system, you can display the contents by entering `ls /`.
+Absolute filepaths work regardless of what directory you're in. They typically specify something relative to the root directory, `/`, or your home directory, `~`. The root directory is the top-level directory of your operating system, you can display the contents by entering `ls /`.
 
 In our previous example, we used the relative filepath `files/file.txt` to refer to `file.txt` while we were in our home directory. If we were somewhere else on our system but still wanted to access `file.txt`, we could use the absolute filepath `~/files/file.txt`. This means 'start at my home directory, then go into the files folder and give me file.txt'. We could also specify this absolute filepath relative to the root directory: `/home/$USER/files/file.txt`.
 
-`$USER` is a special environment variable that holds whatever you set as your Linux username. There are many environment variables used across Linux, and all of them are referred to by using the ${NAME} syntax.
+`$USER` is a special environment variable that holds whatever you set as your system username. There are many environment variables used across your system, and all of them are referred to by using the ${NAME} format.
 
-A couple more things to note is that `..` refers to the directory one level above your current working directory, and `.` refers to the directory you are currently in. `.` is useful when you're copying files from somewhere else to your current directory, for example:
+Another thing to note is that `.` refers to the directory you are currently in. `.` is useful when you're copying files from somewhere else to your current directory, for example:
 
 ```sh
 $ cp ~/some/remote/directory/file.txt .
@@ -261,7 +261,7 @@ One particularly dangerous way of using wildcards is deleting files with `rm`. I
 
 A package manager is a program that handles the installation, updating, or removal of software on a system. It keeps track of a list of repositories, which are simply remote sources of packages you can download.
 
-The package manager that ships with Ubuntu is called the APT package manager, which stands for Advanced Package Tool. macOS does not ship with a package manager, but if you followed the guide in [Getting Started](../../getting_started/index.html), you should have the brew package manager.
+The package manager that ships with Ubuntu is called the APT package manager, which stands for Advanced Package Tool. macOS does not ship with a package manager, but if you followed the guide in [Getting Started](../../getting_started/index.html), you should have the homebrew package manager.
 
 ### APT
 
