@@ -5,7 +5,7 @@ parent: Lesson 1 - The Tools of the Trade
 grand_parent: Lessons
 nav_order: 2
 ---
----
+
 # Lesson 1.2: Remote Repositories with Git
 {: .no_toc }
 
