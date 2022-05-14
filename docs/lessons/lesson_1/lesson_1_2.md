@@ -151,6 +151,13 @@ A useful shortcut you should know is `git add .`, which tells git stage all chan
 #### Committing Changes
 {: .no_toc }
 
+Before we commit our changes to the repo, we need to tell git who we are. Each commit that you push to the repo will be tagged with your email and name. Run the following commands, but use your actual email and name in the quotes.
+
+```sh
+$ git config --global user.email "you@example.com"
+$ git config --global user.name "Your Name"
+```
+
 To commit the staged changes, use the `git commit` command. If you only enter `git commit`, it will open a text editor and ask you to enter a commit messsage. We can pass the `-m` flag to `git commit` to provide the message to the command line:
 
 ```sh
