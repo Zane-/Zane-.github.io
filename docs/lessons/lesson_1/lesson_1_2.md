@@ -14,7 +14,7 @@ nav_order: 2
 - TOC
 {:toc}
 
-Imagine you're working on a software project with other people. How would you go about sharing all the files? You could simply host all the code on Google Drive or another file sharing service, but what happens when people want to work on the same file at the same time? What happens when someone messes up and you need to undo changes? It turns out someone thought of these problems a long time ago, and the solution is called _version control_ (aka _source control_). The first version control system was created in 1972 (it probably sucked).
+Imagine you're working on a software project with other people. How would you go about sharing all the files? You could simply host all the code on Google Drive or another file sharing service, but what happens when people want to work on the same file at the same time? What happens when someone messes up and you need to undo changes? Someone thought of these problems a long time ago, and the solution is called _version control_ (aka _source control_). The first version control system was created in 1972 (it probably sucked).
 
 In short, a version control system manages changes to a set of files (aka repository). They store a history of the changes so you can revert to any point of time. There are many different version control systems out there, each with their own advantages and disadvantages, but the most popular system is called _git_. Git was developed in 2005 by Linus Torvalds, the creator of Linux. It is a very powerful tool, but you can get by only knowing a few simple commands.
 
@@ -25,7 +25,9 @@ In short, a version control system manages changes to a set of files (aka reposi
 ### Adding SSH keys to your Github account
 {: .no_toc }
 
-We will modify projects on Github by using the command line from our Ubuntu system we set up in [Getting Started](../getting_started). To do this, we need to add an SSH key to our account, which Github uses for authentication. Simply put, an SSH key is a pair comprised of a public and private key (sequence of characters) that can be used for encryption. Anyone can encrypt something with your public key, but you can only decrypt the message if you have the private key. We will generate a new SSH key, and add the key to our Github account.
+We will modify projects on Github by using the command line. To do this, we need to add an SSH key to our Githubaccount, which Github uses for authentication.
+
+Simply put, an SSH key is a pair comprised of a public and private key (sequence of characters) that can be used for encryption. Anyone can encrypt something with your public key, but you can only decrypt the message if you have the private key. We will generate a new SSH key, and add the key to our Github account.
 
 #### Generating a new SSH key
 {: .no_toc }
@@ -96,7 +98,9 @@ $ brew install git
 
 ### Cloning a Repository
 
-To clone a remote repository (i.e. a repo hosted on Github), use the `git clone` command. The command takes the remote url to the repo as well as the directory to clone it to. If no directory is provided, it clones it to the current directory using the title of the repo. From your `python-code` repo on Github, click the green `Code` button, then the `SSH` tab in the popup window. Copy the url to your clipboard, paste it after the following command, and press `Enter`:
+To clone a remote repository (i.e. a repo hosted on Github), use the `git clone` command. The command takes the remote url to the repo as well as the directory to clone it to. If no directory is provided, it clones it to the current directory using the title of the repo.
+
+From your `python-code` repo on Github, click the green `Code` button, then the `SSH` tab in the popup window. Copy the url to your clipboard, paste it after the following command, and press `Enter`:
 
 ```sh
 $ git clone
