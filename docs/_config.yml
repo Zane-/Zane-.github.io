@@ -38,7 +38,7 @@ remote_theme: zane-/just-the-docs
 color_scheme: dark
 
 aux_links:
-    "Join Discord Server":
+    "Open Discord Server":
         - "https://discord.gg/9Ktkh9S8Mj"
 
 aux_links_new_tab: true
