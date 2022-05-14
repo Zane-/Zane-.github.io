@@ -128,7 +128,7 @@ $ mv file.txt files
 
 The `mv` command first takes the file or directory you want to move, then the destination. This command is saying 'take `file.txt` and move it into the files directory.' Enter `ls` and you should only see `files` now.
 
-You can also rename a file using the `mv` command:
+You can also rename a file using the `mv` command, for example:
 
 ```sh
 $ mv file.txt file_new_name.txt
