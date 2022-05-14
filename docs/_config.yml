@@ -37,6 +37,10 @@ remote_theme: zane-/just-the-docs
 # just-the-docs config
 color_scheme: dark
 
+aux_links:
+    "Join Discord Server":
+        - "https://discord.gg/9Ktkh9S8Mj"
+
 logo: "/assets/images/python-club-green.png"
 
 # Exclude from processing.
