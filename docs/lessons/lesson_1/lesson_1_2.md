@@ -93,7 +93,7 @@ $ brew install git
 
 ### Cloning a Repository
 
-To clone a remote repository (ie a repo hosted on Github), use the `git clone` command. The command takes the remote url to the repo as well as the directory to clone it to. If no directory is provided, it clones it to the current directory using the title of the repo. From your `python-code` repo on Github, click the green `Code` button, then the `SSH` tab in the popup window. Copy the url to your clipboard, paste it after the following command, and press `Enter`:
+To clone a remote repository (i.e. a repo hosted on Github), use the `git clone` command. The command takes the remote url to the repo as well as the directory to clone it to. If no directory is provided, it clones it to the current directory using the title of the repo. From your `python-code` repo on Github, click the green `Code` button, then the `SSH` tab in the popup window. Copy the url to your clipboard, paste it after the following command, and press `Enter`:
 
 ```sh
 $ git clone
