@@ -23,10 +23,12 @@ In short, a version control system manages changes to a set of files (aka reposi
 [Github](https://github.com), owned by Microsoft since 2018, is the world's largest hosting provider for software development projects. Github allows us to host our software projects for free, and they can be viewed by anyone (there can also be private projects), or modified by people who are granted permission. If you don't already have an account, [sign up](https://github.com/signup) for free.
 
 ### Adding SSH keys to your Github account
+{: .no_toc }
 
 We will modify projects on Github by using the command line from our Ubuntu system we set up in [Getting Started](../getting_started). To do this, we need to add an SSH key to our account, which Github uses for authentication. Simply put, an SSH key is a pair comprised of a public and private key (sequence of characters) that can be used for encryption. Anyone can encrypt something with your public key, but you can only decrypt the message if you have the private key. We will generate a new SSH key, and add the key to our Github account.
 
 #### Generating a new SSH key
+{: .no_toc }
 
 To generate a new SSH key, we can use the `ssh-keygen` command:
 
@@ -37,6 +39,7 @@ $ ssh-keygen -t ed25519 -C "your_email@something.com"
 `ed25519` is the algorithm being used to generate the key, and the email is just used as a label to identify the key. The command will prompt you to enter where to save it, just hit `Enter` to accept the default location. It will then ask for a passphrase, choose anything, but don't forget it.
 
 #### Adding the SSH key to ssh-agent
+{: .no_toc }
 
 To actually use our key when we interact with Github, we need to add it to our ssh-agent. ssh-agent is just a program that can store our key so we don't have to enter our passphrase each time. Run the following command to start the ssh-agent:
 
@@ -117,6 +120,7 @@ Any files you create within your repo's directory aren't going to magically appe
 
 
 #### Staging Changes
+{: .no_toc }
 
 Changed files are staged in git by using the `add` command. Let's create a new text file and stage it:
 
@@ -141,6 +145,7 @@ you should see that you have a new file change to be committed.
 A useful shortcut with `git add` is `git add .`. This means to stage all file changes in your repo starting from your current directory.
 
 #### Committing Changes
+{: .no_toc }
 
 To commit the staged changes, use the `git commit` command. If you only enter `git commit`, it will open a text editor and ask you to enter a commit messsage. We can pass the `-m` flag to `git commit` to provide the message to the command line:
 
@@ -153,6 +158,7 @@ Commit messages should be somewhat descriptive, so you know what was changed in 
 A commit acts as a sort of checkpoint for the repo; it is possible to restore the repo to any commit in case anything bad happens. As a general rule of thumb, you should not include too many changes in a commit at the same time because it becomes more likely to break something. For example, if something breaks in a large commit containing a dozen different changes, all of those changes have to be rolled back instead of just the offending change. Small changes also make it easier to figure out what actually broke something.
 
 ##### Resetting a Commit
+{: .no_toc }
 
 If you use `git commit`, but find you forgot about a file you wanted to include in it, you can undo it by using this command:
 
@@ -165,6 +171,7 @@ This command will wipe out the commit you just created, but keep your local chan
 There are various other ways to use `git reset`, including throwing away all changes and jumping back in time to an earlier commit. See [git reset documentation](https://git-scm.com/docs/git-reset) for more details.
 
 #### Pushing Changes
+{: .no_toc }
 
 After you create your commit with the `test.txt` file, we can push it to our remote repository by using the `git push` command. The command takes the remote repositories URL, as well as the branch to push to. When we create a repo using Github, our branch will be named 'main' by default. For the url, we can use the shorthand 'origin' to refer to the url we originally cloned our repo from. Putting that together, we can push our change to Github using the command:
 
@@ -187,6 +194,7 @@ Refresh your repo on Github, and you should see your `test.txt` file there. Clic
 
 
 #### Pulling Changes
+{: .no_toc }
 
 Since we pushed a commit from Github itself, our copy of the repo on our Ubuntu system is 1 commit behind `HEAD`. In version control systems, `HEAD` refers to the most recent version of the repo. To catch up to `HEAD`, we can use the `git pull` command while inside of our repo directory:
 
@@ -210,7 +218,9 @@ When working with multiple people on the same repo, `git pull` is where you can 
 
 ### A note on Branches
 
-Earlier, we noted that the default branch that Github creates when we made our repo was 'main'. In git, we can create multiple branches, switch between them, push changes to certain branches, or merge branches together. Think of a branch as another version of the repo. When working with multiple people on a project, someone might be developing on one branch specifically related to whatever feature they are working on. Once that feature is thoroughly tested and ready to be released, that branch would be merged with the `main` branch. In general, the `main` branch should be a pristine, working copy of the project.
+Earlier, we noted that the default branch that Github creates when we made our repo was 'main'. In git, we can create multiple branches, switch between them, push changes to certain branches, or merge branches together.
+
+Think of a branch as another version of the repo. When working with multiple people on a project, someone might be developing on one branch specifically related to whatever feature they are working on. Once that feature is thoroughly tested and ready to be released, that branch would be merged with the `main` branch. In general, the `main` branch should be a pristine, working copy of the project.
 
 ## tldr
 

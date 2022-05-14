@@ -29,7 +29,7 @@ From now on, I will shorthand this to:
 $
 ```
 
-When you see `$`, that means anything you see after should be entered into your command prompt, not including `$`.
+When you see `$`, that means anything you see after should be entered into your command prompt, not including `$`. You also shouldn't copy-paste the commands into your command prompt. You should type them out to build up muscle memory.
 
 One thing you should know that if any command seems to freeze, or you want to cancel it for any reason, use `Ctrl+c`. If that doesn't work, try pressing  `Ctrl+d` or `q`.
 
@@ -185,6 +185,7 @@ rm -r files
 Enter `ls` and you should see your `files` directory has been deleted.
 
 #### Trashing Files
+{: .no_toc }
 
 Unlike deleting files in Windows or macOS, `rm` does not move the file to trash; it is permanently deleted. If this scares you, feel free to install the `trash` command:
 
@@ -274,6 +275,7 @@ The package manager that ships with Ubuntu is called the APT package manager, wh
 The command for APT is `apt-get`, and typically must be used with the `sudo` command because it modifies your system.
 
 #### Refreshing Sources
+{: .no_toc }
 
 The repositories that you have access to with APT can be refreshed via the `update` command:
 
@@ -284,6 +286,7 @@ $ sudo apt-get update
 This command must be run after adding a new source to APT. After it completes, any packages in your sources can be installed.
 
 #### Installing Packages
+{: .no_toc }
 
 Installing packages is done with the `install` command. You can specify multiple packages to install at once by separating them with spaces:
 
@@ -294,6 +297,7 @@ $ sudo apt-get install python3-dev ruby-dev
 Note that more packages than you listed may be installed because packages can list _dependencies_. A dependency is a package that another package depends on to work; dependencies will be installed automatically.
 
 #### Upgrading Packages
+{: .no_toc }
 
 Any installed packages can be upgraded if available by using the `upgrade` command:
 
@@ -304,6 +308,7 @@ $ sudo apt-get upgrade
 This will download the newer version of the package and overwrite the old one.
 
 #### Removing Packages
+{: .no_toc }
 
 Removing packages is done with the `remove` command:
 
@@ -322,6 +327,7 @@ $ sudo apt-get autoremove
 homebrew is a package manager for macOS, feel free to skip this section if you are not on macOS. The command for homebrew is `brew`. If you have not installed it yet, please do so from [brew.sh](https://brew.sh).
 
 #### Refreshing Sources
+{: .no_toc }
 
 homebrew can be refreshed via the `update` command:
 
@@ -330,6 +336,7 @@ $ brew update
 ```
 
 #### Installing Packages
+{: .no_toc }
 
 Installing packages is done with the `install` command. You can specify multiple packages to install at once by separating them with spaces:
 
@@ -338,6 +345,7 @@ $ brew install ripgrep fzf
 ```
 
 #### Upgrading Packages
+{: .no_toc }
 
 Any installed packages can be upgraded if available by using the `upgrade` command:
 
@@ -348,6 +356,7 @@ $ brew upgrade
 This will download the newer version of the package and overwrite the old one.
 
 #### Removing Packages
+{: .no_toc }
 
 Removing packages is done with the `uninstall` command:
 

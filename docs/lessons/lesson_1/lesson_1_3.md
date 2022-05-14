@@ -49,6 +49,7 @@ If you enter the command `zsh` now, zsh should start and diplay a new command pr
 Note that if you skipped installing fonts in [Getting Started](../../getting_started), certain characters will not display correctly.
 
 ### Included zsh Plugins
+{: .no_toc }
 
 Note that the features described here are not built-in to zsh by default, but are plugins hosted on Github.
 
@@ -61,6 +62,7 @@ Note that the features described here are not built-in to zsh by default, but ar
 All files and directories in Unix-based operating systems (Linux or macOS) have file permissions associated with them. Permissions fall into three categories, _read_, which grants permission to view the file; _write_, which grants permission to modify the file; and _execute_, which grants permission to execute or run the file.
 
 ### Viewing Permissions
+{: .no_toc }
 
 To view the permissions of files, you can pass the `-l` flag to `ls`. This will show more info, including the permissions, filesize, owner, and last modified date. Run the command in your home directory:
 
@@ -77,6 +79,7 @@ The first set of rwx permissions is for the owner, which is the user who created
 In conclusion, you would read the permission `drwxr-xr-x` as a "directory that grants the owner read, write, and execute permission, the owner's groups read and execute, but not write permissions, and everyone else only read and execute permission as well.
 
 ### Changing Permissions
+{: .no_toc }
 
 You can change the permissions of a file or directory by using the `chmod` command. The `chmod` command takes a numeric representation of the permissions to set along with the file to change it for.
 
@@ -158,6 +161,7 @@ If you ever want to declare your own aliases, you can add them to this file, the
 ## Productivity Tools
 
 ### tmux
+{: .no_toc }
 
 tmux stands for 'terminal multiplexer'. It is a program that runs in your shell that allows you to run multiple programs in one terminal window. You can split your terminal vertically or horizontally into 'panes' and can create as many as you want. This is very useful for doing multiple things as once, such as editing multiple files while running another program. You can install my tmux setup by using my installation script:
 
@@ -168,6 +172,7 @@ $ cd ~/dotfiles && ./tmux.sh
 This will install tmux to your system, copy over some configuration, and install plugins. After the script completes, you may need to run the command `source ~/.zshrc` (or the alias `sz`) again to reload your shell. If you see the line `.tmux.conf:12: no current session`, hit `q` and it should start one. You should now see a status bar at the bottom of your terminal, indicating your username, hostname, running program, and the time.
 
 #### tmux shortcuts
+{: .no_toc }
 
 To enter a tmux shortcut, you first press the assigned prefix key. I have set this to be `Ctrl+a`: if you press `Ctrl+a`, you should see a symbol with `^A` on the status bar. This symbol indicates tmux is ready to receive a command.
 
@@ -187,6 +192,7 @@ Here is an abridged table of shortcuts in tmux and what they do (note that some 
 You can resize your panes by clicking and dragging with your mouse at the border, and you can right click any of the panes as well to close them or create another split within them.  For a full list of the shortcuts I created, you can look in the file `~/.tmux.conf`, or consult the internet for the default shortcuts.
 
 ### fasd
+{: .no_toc }
 
 fasd is a tool that makes navigating directories and editing files a lot quicker. It stores a database of your most-accessed directories and files, and when you type in a fasd command along with a substring of a directory or file you want, it will intelligently complete the rest of the directory or file. As soon as you installed zsh, `fasd` has been tracking the directories you've visited.
 
@@ -203,6 +209,7 @@ You can make the substring you use as long or short as you want, you just need t
 See the bottom of `~/dotfiles/.aliases` for a full list of fasd command aliases.
 
 ### fzf
+{: .no_toc }
 
 fzf is a command that lets you search for a text pattern in the output of another command. I have added shortcuts to zsh to invoke it.
 
@@ -214,6 +221,7 @@ Another useful shortcut is `Ctrl+r`, which opens up a tmux pane containing your 
 Additionally, you can use `Alt+c` to open a tmux pane that will allow you to search for a directory and `cd` into it.
 
 ### exa
+{: .no_toc }
 
 exa is an enhanced version of the `ls` command that includes icons for files as well as better coloring. To install it, we need to add a PPA. PPA stands for personal package archive, and they allow you to add another source to the `apt` package manager to install things from.
 
@@ -239,6 +247,7 @@ Below are the aliases I use to run the `exa` command:
 | `ll`    | Lists details for all files  |
 
 ### bat
+{: .no_toc }
 
 bat is an enhanced version of `cat` that includes syntax highlighting, line numbers, and more. If you installed my zsh setup using the `zsh.sh` script, you should already have it. Enter the command:
 
@@ -249,6 +258,7 @@ bat ~/.zshrc
 It will open a scrollable view of the `~/.zshrc` file. Navigate with the arrow keys, or press `q` to quit. If a file is small enough to fit on-screen, bat will display it directly to your terminal instead of opening a separate view.
 
 ### ripgrep
+{: .no_toc }
 
 ripgrep is just like the `grep` command. It searches for patterns in files, but it is a lot faster and a little easier to use. It should already be installed if you ran the `zsh.sh` script; the command is `rg`. The basic usage is `rg` followed by the text pattern to search for, then optionally a file to search in. If no file is given, it will search all files in the current directory as well as any subdirectories. Note that by default, ripgrep does not search hidden files (files starting with '.'), you must pass the `--hidden` flag to search these files.
 
@@ -261,6 +271,7 @@ rg --hidden alias
 You should see a bunch of files returned along with the line numbers where the word 'alias' occurred.
 
 `rg` can also take the place of the `find` command if you pass the `--files` flag to it. This tells `rg` to only search filenames isntead of the content inside files.
+
 ## tldr
 
 * A script is a file containing a series of commands and other logic that can be executed.
