@@ -192,6 +192,12 @@ Unlike deleting files in Windows or macOS, `rm` does not move the file to trash;
 $ sudo apt-get -y install trash-cli
 ```
 
+or on macOS:
+
+```sh
+$ brew install trash-cli
+```
+
 After installation, you should now have access to the `trash` command. Create a file using `touch`, and then trash it with the `trash command`:
 
 ```sh
