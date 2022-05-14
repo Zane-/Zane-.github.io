@@ -126,7 +126,7 @@ If you enter `ls` now, you should see your `files` directory in blue alongside t
 $ mv file.txt files
 ```
 
-The `mv` command first takes the file or directory you want to move, then the destination. This command is saying take `file.txt` and move it into the files directory. Enter `ls` and you should only see `files` now.
+The `mv` command first takes the file or directory you want to move, then the destination. This command is saying 'take `file.txt` and move it into the files directory.' Enter `ls` and you should only see `files` now.
 
 You can also rename a file using the `mv` command:
 
