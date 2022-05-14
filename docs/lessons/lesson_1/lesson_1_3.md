@@ -285,7 +285,7 @@ You should see a bunch of files returned along with the line numbers where the w
 
 * bat is an improved version of `cat` with syntax highlighting and line numbers.
 
-* ripgrep is an improved version of `grep` and can search files for text patterns very quickly.
+* ripgrep is an improved version of `grep` and `find` and can search files or filenames for text patterns very quickly.
 
 ## Conclusion
 
