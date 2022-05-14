@@ -272,7 +272,7 @@ The package manager that ships with Ubuntu is called the APT package manager, wh
 
 ### APT
 
-The command for APT is `apt-get`, and typically must be used with the `sudo` command because it modifies your system.
+The command for APT is `apt-get`, and typically must be used with the `sudo` command because it modifies your system. If you are on macOS, feel free to skip this section.
 
 #### Refreshing Sources
 {: .no_toc }
