@@ -132,7 +132,7 @@ $ git status
 
 you should see that you have a new file change to be committed.
 
-A useful shortcut with `git add` is `git add .`. This means to stage all file changes in your repo.
+A useful shortcut with `git add` is `git add .`. This means to stage all file changes in your repo starting from your current directory.
 
 #### Committing Changes
 
