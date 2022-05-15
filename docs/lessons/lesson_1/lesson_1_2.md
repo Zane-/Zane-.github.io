@@ -75,7 +75,7 @@ $ cat ~/.ssh/id_ed25519.pub | pbcopy
 
 `|` is called the _pipe_ command, it lets you redirect the output of one command into the input of another. Here we give the output of the `cat` command to either `clip.exe` or `pbcopy`, which copies whatever you give to it to your clipboard.
 
-Now, navigate to the [SSH and GPG keys](https://github.com/settings/keys) settings page on Github, click `New SSH key`, give it a title, paste in your key, and click `Add SSH key`. If it worked, you should now be able to modify any of your repositories hosted on Github from your Ubuntu system.
+Now, navigate to the [SSH and GPG keys](https://github.com/settings/keys) settings page on Github, click `New SSH key`, give it a title, paste in your key, and click `Add SSH key`. If it worked, you should now be able to modify any of your repositories hosted on Github from your system.
 
 
 ## Creating our first Repository
@@ -211,7 +211,7 @@ Refresh your repo on Github, and you should see your `test.txt` file there. Clic
 #### Pulling Changes
 {: .no_toc }
 
-Since we pushed a commit from Github itself, our copy of the repo on our Ubuntu system is 1 commit behind `HEAD`. In version control systems, `HEAD` refers to the most recent version of the repo. To catch up to `HEAD`, we can use the `git pull` command while inside of our repo directory:
+Since we pushed a commit from Github itself, the copy of the repo on our system is 1 commit behind `HEAD`. In version control systems, `HEAD` refers to the most recent version of the repo. To catch up to `HEAD`, we can use the `git pull` command while inside of our repo directory:
 
 ```
 $ git pull
