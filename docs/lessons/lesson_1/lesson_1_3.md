@@ -31,7 +31,9 @@ The shell scripts I have created in my dotfiles repo contain scripts to replicat
 $ ./zsh.sh
 ```
 
-`./` followed by an executable filename is how you run an executable from the command line. As the script runs, you should see output indicating things being installed, created, and linked. After the script finishes, enter `cd` to return to your home directory, and enter `ls -a` to show all files. You should now see some new files such as `.zshrc`, `.zshenv` and `.zpreztorc`. These are configuration files used by zsh that determine the behavior and features of your shell.
+Executables are run from the command line by putting just the filepath. `./` refers to the current directory, then we give it the executable filename. To execute things in a different directory, just put the path. For example: `~/dotfiles/zsh.sh`.
+
+As the script runs, you should see output indicating things being installed, created, and linked. After the script finishes, enter `cd` to return to your home directory, and enter `ls -a` to show all files. You should now see some new files such as `.zshrc`, `.zshenv` and `.zpreztorc`. These are configuration files used by zsh that determine the behavior and features of your shell.
 
 Now, we need to change our default shell from bash to zsh. We will use the `chsh` command for this, which stands for 'change shell'. The command takes the filepath to the shell executable, which can vary depending on your system. The `where` command will tell you the filepath to a command's executable. Most executables on Linux systems are located in `/bin/`, but there are several other directories too. Enter the following command to determine where your zsh executable is installed:
 
